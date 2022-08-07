@@ -12,8 +12,10 @@ header {
     height: 100%;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: center;
+    padding-right: 35px;
+    padding-left: 35px;
 }
 
 
