@@ -1,4 +1,5 @@
 * {
+    /* @media only screen and (max-device-width: 100%); */
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     margin-left: 0%;
@@ -17,6 +18,33 @@ header {
     padding-right: 35px;
     padding-left: 35px;
     max-width: 100%;
+}
+
+.menu {
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-child {
+    display: none;
+    background-color: #333333;
+    min-width: 200px;
+}
+.dropdown-child a {
+    color: #FFFFFF;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
 }
 
 main .extract {
@@ -66,9 +94,6 @@ h1 {
 }
 
 
-/* 
-linha abaixo de cada ítem da seção extrato de transações.
-
-.extract:nth-child(p) {
-border-bottom: 2px solid #E0E0E0;
-} */
+p.extract {
+    border-bottom: 2px solid #333333;
+}
