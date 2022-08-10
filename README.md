@@ -6,9 +6,11 @@ ok - Alterar o link “Resumo” para “Cadastro de transações”.
 ok - Alterar o link “Dashboard” para “Limpar dados”.
 ok - Excluir o link “Configurações”.
 
+- organizar menu
+
 O que sua aplicação deverá fazer:
 
-ok - Incluir transações de compra ou venda de mercadoria.
+- Incluir transações de compra ou venda de mercadoria.
 
 em andamento - A aplicação deverá ser responsiva e estar de acordo com o layout fornecido.
 [https://developer.mozilla.org/pt-BR/docs/Web/CSS/Media_Queries/Using_media_queries]
