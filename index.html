@@ -13,12 +13,11 @@
     <title>Document</title>
 </head>
 
-<!-- deixar o header fixo -->
 <header>
     <img src="./Ellipse 13.svg" alt="logo" />
-    <h1>Controle Financeiro</h1>
+    <h3>Controle Financeiro</h3>
     <a class="menu" href="./menu.html" name="menu" target="_self"><img src="./menu.jpg" alt="menu"></a>
-    
+
 </header>
 
 <body>
@@ -27,20 +26,28 @@
 
         <div class="controll">
 
-            <label for="state">
-                <p>Tipo de Transação</p>
-            </label> <select id="state">
-                <option value="valor-compra" selected>Compra</option>
-                <option value="valor-venda">Venda</option>
-            </select>
+            <div class="controll-transacao">
+                <label for="state">
+                    <p>Tipo de Transação</p>
+                </label><select id="state">
+                    <option value="valor-compra" selected>Compra</option>
+                    <option value="valor-venda">Venda</option>
+                </select>
+            </div>
 
-            <p>Nome da Mercadoria</p>
-            <input type="text" placeholder="Input">
+            <div class="controll-mercadoria">
+                <p>Nome da Mercadoria</p>
+                <input type="text" placeholder="Input">
+            </div>
 
-            <p>Valor</p>
-            <input type="number" placeholder="R$0,00"><br>
+            <div class="controll-valor">
+                <p>Valor</p>
+                <input type="number" placeholder="R$0,00">
+            </div>
 
-            <button type="submit" name="save" value="Save" class="btn-adicionar">Adicionar Transação</button>
+            <div class="btn-controll-child">
+                <button type="submit" name="save" class="btn-adicionar">Adicionar Transação</button>
+            </div>
         </div>
 
 
@@ -51,7 +58,7 @@
         <div class="extract">
             <div class="marcadoria">
                 <h4>Mercadoria</h4>
-                
+
                 <p>Mercadoria 1</p>
                 <p>Mercadoria 2</p>
                 <p>Mercadoria 3</p>
@@ -72,7 +79,7 @@
                 <h4 id="lucro-prejuizo">
                     <R1>R$12.909,99</R1>
                 </h4>
-                <span class="lucro">[Lucro]</span>
+                <em class="lucro">[Lucro]</em>
             </div>
 
         </div>

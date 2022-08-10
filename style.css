@@ -1,99 +1,172 @@
 * {
-    /* @media only screen and (max-device-width: 100%); */
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     margin-left: 0%;
     margin-right: 0%;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    background-color: #E0E0E0;
-    height: 100%;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    align-content: center;
-    padding-right: 35px;
-    padding-left: 35px;
-    max-width: 100%;
+/*RESPONSIVIDADE MOBILE*/
+
+@media screen and (max-width:767px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        background-color: #E0E0E0;
+        height: 100%;
+        width: auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        padding-right: 35px;
+        padding-left: 35px;
+        max-width: 100%;
+    }
+
+    .menu {
+        color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    /* .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-child {
+        display: none;
+        background-color: #333333;
+        min-width: 200px;
+    }
+
+    .dropdown-child a {
+        color: #FFFFFF;
+        padding: 20px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-child {
+        display: block;
+    } */
+
+    main .extract {
+        display: flex;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: space-around;
+    }
+
+    h3 {
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .btn-adicionar {
+        display: inline-flex;
+        margin-top: 35px;
+        color: #FFFFFF;
+        box-sizing: border-box;
+        background: #333333;
+        border: none;
+        height: 32px;
+        width: 20rem;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .controll {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        width: 100%;
+        padding-bottom: 35px;
+        border-bottom: 2px solid #E0E0E0;
+    }
+    
+    .controll-child {
+        width: 100%;
+    }
+    .extract-title {
+        padding-top: 35px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+    p.extract {
+        border-bottom: 2px solid #333333;
+    }
+
 }
 
-.menu {
-    color: #FFFFFF;
-    border: none;
-    cursor: pointer;
-    padding:20px;
-    margin-top:20px;
-}
+/*FIM DA RESPONSIVIDADE MOBILE */
+/*********************************************************/
+/* RESPONSIVIDADE TABLET PORTRAIT */
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropdown-child {
-    display: none;
-    background-color: #333333;
-    min-width: 200px;
-}
-.dropdown-child a {
-    color: #FFFFFF;
-    padding: 20px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown:hover .dropdown-child {
-    display: block;
-}
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        background-color: #E0E0E0;
+        height: 100%;
+        width: auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        padding-right: 35px;
+        padding-left: 35px;
+        max-width: 100%;
+    }
 
-main .extract {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-left: 20px;
-    margin-right: 20px;
-    justify-content: space-around;
-}
+    .btn-adicionar {
+        margin-top: 35px;
+        color: #FFFFFF;
+        box-sizing: border-box;
+        background: #333333;
+        border: none;
+        height: 32px;
+        width: auto;
+        left: 0px;
+        top: 0px;
+        border-radius: 4px;
+    }
 
-h1 {
-    font-style: normal;
-    font-weight: 400;
-}
+    .controll {
+        display: flex;
+        padding-bottom: 35px;
+        border-bottom: 2px solid #E0E0E0;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: baseline;
+        margin-left: 20px;
+        margin-right: 20px;
+        flex-direction: row;
+    }
 
-.btn-adicionar {
-    margin-top: 35px;
-    color: #FFFFFF;
-    box-sizing: border-box;
-    background: #333333;
-    border: none;
-    height: 32px;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    border-radius: 4px;
-}
-
-.controll {
-    display: flex;
-    padding-bottom: 35px;
-    border-bottom: 2px solid #E0E0E0;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: stretch;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.extract-title {
-    padding-top: 35px;
-    display: flex;
-    justify-content: space-evenly;
-}
+    .btn-controll-adicionar {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 
 
-p.extract {
-    border-bottom: 2px solid #333333;
+    .extract-title {
+        padding-top: 35px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+    p.extract {
+        border-bottom: 2px solid #333333;
+    }
 }
