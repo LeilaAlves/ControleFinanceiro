@@ -10,6 +10,7 @@
 @media screen and (max-width:767px) {
     header {
         display: flex;
+        font-size: 22px;
         flex-direction: row;
         background-color: #E0E0E0;
         height: 100%;
@@ -59,6 +60,12 @@
         justify-content: space-around;
     }
 
+    input {
+        width: stretch;
+        width: -webkit-fill-available;
+        width: -moz-available;
+    }
+
     h3 {
         font-style: normal;
         font-weight: 400;
@@ -80,18 +87,18 @@
 
     .controll {
         display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
         align-items: stretch;
         width: 100%;
-        padding-bottom: 35px;
+        padding: 20;
         border-bottom: 2px solid #E0E0E0;
+        flex-direction: column;
+        padding: 20px;
     }
-    
+
     .controll-child {
         width: 100%;
     }
+
     .extract-title {
         padding-top: 35px;
         display: flex;
@@ -112,6 +119,7 @@
 @media screen and (min-width:768px) and (max-width: 1023px) {
     header {
         display: flex;
+        font-size: 25px;
         flex-direction: row;
         background-color: #E0E0E0;
         height: 100%;
@@ -165,6 +173,13 @@
         justify-content: space-evenly;
     }
 
+    main .extract {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: space-around;
+    }
 
     p.extract {
         border-bottom: 2px solid #333333;
