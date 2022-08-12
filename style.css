@@ -10,7 +10,7 @@
 @media screen and (max-width:767px) {
     header {
         display: flex;
-        font-size: 22px;
+        font-size: 18px;
         flex-direction: row;
         background-color: #E0E0E0;
         height: 100%;
@@ -19,8 +19,8 @@
         align-items: center;
         justify-content: space-between;
         align-content: center;
-        padding-right: 35px;
-        padding-left: 35px;
+        padding-right: 25px;
+        padding-left: 25px;
         max-width: 100%;
     }
 
@@ -28,30 +28,7 @@
         color: #FFFFFF;
         border: none;
         cursor: pointer;
-
     }
-
-    /* .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-child {
-        display: none;
-        background-color: #333333;
-        min-width: 200px;
-    }
-
-    .dropdown-child a {
-        color: #FFFFFF;
-        padding: 20px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown:hover .dropdown-child {
-        display: block;
-    } */
 
     main .extract {
         display: flex;
@@ -60,11 +37,13 @@
         justify-content: space-around;
     }
 
-    input {
+    input,
+    #state {
         width: stretch;
         width: -webkit-fill-available;
         width: -moz-available;
     }
+
 
     h3 {
         font-style: normal;
@@ -73,7 +52,6 @@
 
     .btn-adicionar {
         display: flex;
-        margin-top: 35px;
         color: #FFFFFF;
         box-sizing: border-box;
         background: #333333;
@@ -95,8 +73,8 @@
         padding: 20px;
     }
 
-    .controll-child {
-        width: 100%;
+    .transacao-title {
+        visibility: hidden;
     }
 
     .extract-title {
@@ -106,7 +84,7 @@
     }
 
 
-    .valor-transação p.mercadoria {
+    P.valor-transação p.mercadoria {
         border-bottom: 2px #333333 solid;
     }
 
@@ -116,7 +94,109 @@
 /*********************************************************/
 /* RESPONSIVIDADE TABLET PORTRAIT */
 
-@media screen and (min-width:768px) and (max-width: 1023px) {
+@media screen and (min-width:768px) and (max-width: 1112px) {
+    header {
+        display: flex;
+        font-size: 22px;
+        flex-direction: row;
+        background-color: #E0E0E0;
+        height: 100%;
+        width: auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        padding-right: 35px;
+        padding-left: 35px;
+        max-width: 100%;
+    }
+
+    .controll {
+        display: flex;
+        border: 2px solid #E0E0E0;
+        border-radius: 5px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        margin: 20px;
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    input,
+    #state {
+        width: stretch;
+        width: -webkit-fill-available;
+        width: -moz-available;
+        width: 13rem;
+    }
+
+    .container-btn-add {
+        display: flex;
+        margin-top: 20px;
+        justify-content: end;
+    }
+
+    .btn-adicionar {
+        color: #FFFFFF;
+        background: #333333;
+        border: none;
+        height: 32px;
+        width: 20rem;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .extract-title,
+    .transacao-title {
+        padding-top: 35px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    main .extract {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: space-around;
+    }
+}
+
+/*FIM DA RESPONSIVIDADE PORTRAIT */
+/*********************************************************/
+/* RESPONSIVIDADE TABLET LANDSCAPE */
+
+@media screen and (max-width:1112px) and (min-width:824px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: space-around;
+    }
+
+    .controll {
+        display: flex;
+        border: 2px solid #E0E0E0;
+        border-radius: 5px;
+        flex-wrap: nowrap;
+        margin: 20px;
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+
+/* .transacao-title, .extract-title {
+    centralizar os títulos
+} */
+
+/*FIM DA RESPONSIVIDADE LANDSCAPE */
+/*********************************************************/
+/* RESPONSIVIDADE DESKTOP*/
+
+@media screen and (min-width:1024px) {
     header {
         display: flex;
         font-size: 25px;
@@ -154,14 +234,6 @@
         padding: 20px;
     }
 
-    .btn-controll-adicionar {
-        display: block;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
 
     .extract-title {
         padding-top: 35px;
@@ -175,9 +247,5 @@
         margin-left: 20px;
         margin-right: 20px;
         justify-content: space-around;
-    }
-
-    .valor-transação p.mercadoria {
-        border-bottom: 2px #333333 solid;
     }
 }

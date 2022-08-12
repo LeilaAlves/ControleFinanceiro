@@ -25,6 +25,9 @@
     <main>
 
         <div class="controll">
+            <div class="transacao-title">
+                <strong>Nova Transação</strong>
+            </div>
 
             <div class="controll-transacao">
                 <label for="state">
@@ -44,46 +47,49 @@
                 <p>Valor</p>
                 <input type="number" placeholder="R$0,00">
             </div><br>
-            
 
-            <br><div class="btn-controll-adicionar">
-                <button type="submit" name="save" class="btn-adicionar">Adicionar Transação</button>
+            <br>
+            <div class="container-btn-add">
+                <div class="btn-adicionar">
+                    <button type="submit" name="save" class="btn-adicionar">Adicionar Transação</button>
+                </div>
             </div>
         </div>
 
+        <!-- EXTRATO COMEÇA AQUI -->
 
-        <div class="extract-title">
-            <strong>Extrato de Transações</strong>
-        </div>
-
-        <div class="extract">
-            <div class="marcadoria">
-                <h4>Mercadoria</h4>
-
-                <p>Mercadoria 1</p>
-                <p>Mercadoria 2</p>
-                <p>Mercadoria 3</p>
-                <h4>Total</h4>
+        <div class="extract-container">
+            <div class="extract-title">
+                <strong>Extrato de Transações</strong>
             </div>
 
-            <div class="valor-transação">
-                <h4>Valor</h4>
-                <p>
-                    <R1>R$12.999,00</R1>
-                </p>
-                <p>
-                    <R1>R$99,99</R1>
-                </p>
-                <p>
-                    <R1>R$9,99</R1>
-                </p>
-                <h4 id="lucro-prejuizo">
-                    <R1>R$12.909,99</R1>
-                </h4>
-                <em class="lucro">[Lucro]</em>
-            </div>
+            <div class="extract">
+                <div class="marcadoria">
+                    <h4>Mercadoria</h4>
 
-        </div>
+                    <p>Mercadoria 1</p>
+                    <p>Mercadoria 2</p>
+                    <p>Mercadoria 3</p>
+                    <h4>Total</h4>
+                </div>
+
+                <div class="valor-transação">
+                    <h4>Valor</h4>
+                    <p>
+                        <R1>R$12.999,00</R1>
+                    </p>
+                    <p>
+                        <R1>R$99,99</R1>
+                    </p>
+                    <p>
+                        <R1>R$9,99</R1>
+                    </p>
+                    <h4 id="lucro-prejuizo">
+                        <R1>R$12.909,99</R1>
+                    </h4>
+                    <em class="lucro">[Lucro]</em>
+                </div>
+            </div>
         </div>
     </main>
 
