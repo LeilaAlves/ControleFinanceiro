@@ -166,9 +166,33 @@
 
 /*FIM DA RESPONSIVIDADE TABLET PORTRAIT */
 /*********************************************************/
-/* RESPONSIVIDADE DESKTOP / TABLET LANDSCAPE */
+/* RESPONSIVIDADE TABLET LANDSCAPE */
 
-@media screen and (min-width:1024px) and (orientation: landscape) {
+@media screen and (max-width:1023px) and (orientation: landscape) {
+    main {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: space-around;
+    }
+
+    .controll {
+        display: flex;
+        border: 2px solid #E0E0E0;
+        border-radius: 5px;
+        flex-wrap: nowrap;
+        margin: 20px;
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+
+/*FIM DA RESPONSIVIDADE TABLET LANDSCAPE */
+/*********************************************************/
+/* RESPONSIVIDADE DESKTOP */
+
+@media screen and (min-width:1024px) and (max-width: 1900px) {
     header {
         display: flex;
         font-size: 25px;
@@ -209,15 +233,6 @@
         width: auto;
     }
 
-    .btn-adicionar {
-        color: #FFFFFF;
-        box-sizing: border-box;
-        background: #333333;
-        border: none;
-        height: 32px;
-        border-radius: 4px;
-    }
-
     .controll,
     .extract-container {
         display: flex;
@@ -227,6 +242,19 @@
         padding: 20px;
         width: 50%;
         margin: 40px;
+    }
+
+    .btn-adicionar {
+        display: flex;
+        color: #FFFFFF;
+        box-sizing: border-box;
+        background: #333333;
+        border: none;
+        height: 32px;
+        width: 20rem;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
     }
 
     .controll {
