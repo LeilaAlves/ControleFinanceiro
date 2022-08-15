@@ -7,7 +7,7 @@
 
 /*RESPONSIVIDADE MOBILE*/
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:820px) {
     header {
         display: flex;
         font-size: 18px;
@@ -94,7 +94,7 @@
 /*********************************************************/
 /* RESPONSIVIDADE TABLET PORTRAIT */
 
-@media screen and (min-width:768px) and (max-width: 1112px) {
+@media screen and (min-width:821px) and (max-width: 1023px) {
     header {
         display: flex;
         font-size: 22px;
@@ -164,39 +164,11 @@
     }
 }
 
-/*FIM DA RESPONSIVIDADE PORTRAIT */
+/*FIM DA RESPONSIVIDADE TABLET PORTRAIT */
 /*********************************************************/
-/* RESPONSIVIDADE TABLET LANDSCAPE */
+/* RESPONSIVIDADE DESKTOP / TABLET LANDSCAPE */
 
-@media screen and (max-width:1112px) and (min-width:824px) {
-    main {
-        display: flex;
-        flex-direction: row;
-        margin-left: 20px;
-        margin-right: 20px;
-        justify-content: space-around;
-    }
-
-    .controll {
-        display: flex;
-        border: 2px solid #E0E0E0;
-        border-radius: 5px;
-        flex-wrap: nowrap;
-        margin: 20px;
-        flex-direction: column;
-        padding: 20px;
-    }
-}
-
-/* .transacao-title, .extract-title {
-    centralizar os títulos
-} */
-
-/*FIM DA RESPONSIVIDADE LANDSCAPE */
-/*********************************************************/
-/* RESPONSIVIDADE DESKTOP*/
-
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1024px) and (orientation: landscape) {
     header {
         display: flex;
         font-size: 25px;
@@ -213,6 +185,30 @@
         max-width: 100%;
     }
 
+    input,
+    #state {
+        width: stretch;
+        width: -webkit-fill-available;
+        width: -moz-available;
+    }
+
+    main .extract {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-right: 20px;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+    }
+
     .btn-adicionar {
         color: #FFFFFF;
         box-sizing: border-box;
@@ -222,30 +218,25 @@
         border-radius: 4px;
     }
 
-    .controll {
+    .controll,
+    .extract-container {
         display: flex;
-        border: 2px solid #E0E0E0;
-        border-radius: 5px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: baseline;
-        margin: 20px;
-        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        flex-direction: column;
         padding: 20px;
+        width: 50%;
+        margin: 40px;
     }
 
+    .controll {
+        border: 2px solid #E0E0E0;
+        border-radius: 5px;
+    }
 
     .extract-title {
-        padding-top: 35px;
         display: flex;
         justify-content: space-evenly;
     }
 
-    main .extract {
-        display: flex;
-        flex-direction: row;
-        margin-left: 20px;
-        margin-right: 20px;
-        justify-content: space-around;
-    }
 }
