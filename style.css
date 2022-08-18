@@ -5,89 +5,109 @@
     margin-right: 0%;
 }
 
+body {
+    margin-top: 0%;
+}
+
 /*RESPONSIVIDADE MOBILE*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: row;
+    background-color: #E0E0E0;
+    height: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #333333;
+}
 
-@media screen and (max-width:820px) {
-    header {
-        display: flex;
-        font-size: 18px;
-        flex-direction: row;
-        background-color: #E0E0E0;
-        height: 100%;
-        width: auto;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-        align-content: center;
-        padding-right: 25px;
-        padding-left: 25px;
-        max-width: 100%;
-    }
+.menu {
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
 
-    .menu {
-        color: #FFFFFF;
-        border: none;
-        cursor: pointer;
-    }
+main .extract {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-around;
+}
 
-    main .extract {
-        display: flex;
-        margin-left: 20px;
-        margin-right: 20px;
-        justify-content: space-around;
-    }
-
-    input,
-    #state {
-        width: stretch;
-        width: -webkit-fill-available;
-        width: -moz-available;
-    }
-
-
-    h3 {
-        font-style: normal;
-        font-weight: 400;
-    }
-
-    .btn-adicionar {
-        display: flex;
-        color: #FFFFFF;
-        box-sizing: border-box;
-        background: #333333;
-        border: none;
-        height: 32px;
-        width: 20rem;
-        border-radius: 4px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .controll {
-        display: flex;
-        align-items: stretch;
-        width: 100%;
-        padding: 20;
-        border-bottom: 2px solid #E0E0E0;
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .transacao-title {
-        visibility: hidden;
-    }
-
-    .extract-title {
-        padding-top: 35px;
-        display: flex;
-        justify-content: space-evenly;
-    }
+input,
+#estado-transacao {
+    width: stretch;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: 32px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #979797;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #888888;
+    padding-left: 10px;
+}
 
 
-    P.valor-transação p.mercadoria {
-        border-bottom: 2px #333333 solid;
-    }
+h3 {
+    font-style: normal;
+    font-weight: 400;
+}
 
+.botao-adicionar {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #333333;
+    border: none;
+    height: 32px;
+    width: 100%;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.controle-financeiro {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-bottom: 2px solid #E0E0E0;
+    flex-direction: column;
+    padding: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.transacao-titulo {
+    visibility: hidden;
+}
+
+.extract-title {
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+P.valor-transação p.mercadoria {
+    border-bottom: 2px #333333 solid;
 }
 
 /*FIM DA RESPONSIVIDADE MOBILE */
@@ -111,7 +131,7 @@
         max-width: 100%;
     }
 
-    .controll {
+    .controle-financeiro {
         display: flex;
         border: 2px solid #E0E0E0;
         border-radius: 5px;
@@ -123,33 +143,8 @@
         padding: 20px;
     }
 
-    input,
-    #state {
-        width: stretch;
-        width: -webkit-fill-available;
-        width: -moz-available;
-        width: 13rem;
-    }
-
-    .container-btn-add {
-        display: flex;
-        margin-top: 20px;
-        justify-content: end;
-    }
-
-    .btn-adicionar {
-        color: #FFFFFF;
-        background: #333333;
-        border: none;
-        height: 32px;
-        width: 20rem;
-        border-radius: 4px;
-        align-items: center;
-        justify-content: center;
-    }
-
     .extract-title,
-    .transacao-title {
+    .transacao-titulo {
         padding-top: 35px;
         display: flex;
         justify-content: space-evenly;
@@ -177,7 +172,7 @@
         justify-content: space-around;
     }
 
-    .controll {
+    .controle-financeiro {
         display: flex;
         border: 2px solid #E0E0E0;
         border-radius: 5px;
@@ -210,7 +205,7 @@
     }
 
     input,
-    #state {
+    #estado-transacao {
         width: stretch;
         width: -webkit-fill-available;
         width: -moz-available;
@@ -233,7 +228,7 @@
         width: auto;
     }
 
-    .controll,
+    .controle-financeiro,
     .extract-container {
         display: flex;
         align-items: stretch;
@@ -257,7 +252,7 @@
         justify-content: center;
     }
 
-    .controll {
+    .controle-financeiro {
         border: 2px solid #E0E0E0;
         border-radius: 5px;
     }

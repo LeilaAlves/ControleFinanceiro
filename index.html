@@ -13,65 +13,58 @@
     <title>Controle Financeiro</title>
 </head>
 
-
-<!-- menu/sidebar em progresso -->
-<header>
-    <img src="./Ellipse 13.svg" alt="logo" />
-    <h3>Controle Financeiro</h3>
-    <a href="#" name="menu" target="_self">
+<body>
+    <!-- menu/sidebar em progresso -->
+    <header>
+        <img src="./Ellipse 13.svg" alt="logo" />
+        <p>Controle Financeiro</p>
         <img src="./menu.jpg" alt="menu">
         <!-- <nav class="dropdown">
-            <div class="dropdown-child">
-                <a href="#">Cadastro de transações</a>
-                <a href="#">Limpar dados</a>
-            </div>
+            <a href="#">Cadastro de transações</a>
+            <a href="#">Limpar dados</a>
         </nav> -->
-    </a>
-</header>
-<!-- menu/sidebar em progresso -->
-
-<body>
+    </header>
+    <!-- menu/sidebar em progresso -->
 
     <main>
 
-        <div class="controll">
-            <div class="transacao-title">
+        <!-- CONTROLE FINANCEIRO COMEÇA AQUI -->
+
+        <div class="controle-financeiro">
+            <div class="transacao-titulo">
                 <strong>Nova Transação</strong>
             </div>
 
-            <div class="controll-transacao">
-                <label for="state">
-                    <p>Tipo de Transação</p>
-                </label><select id="state">
+            <div class="tipo-transacao">
+                <label for="estado-transacao">
+                    Tipo de Transação
+                </label>
+                <select id="estado-transacao">
                     <option value="valor-compra" selected>Compra</option>
                     <option value="valor-venda">Venda</option>
                 </select>
             </div>
 
-            <div class="controll-mercadoria">
-                <label for="name"><p>Nome da Mercadoria</p></label>
+            <div class="controle-mercadoria">
+                <label>
+                    Nome da Mercadoria
+                </label>
                 <input required type="text" placeholder="Input">
             </div>
 
             <div class="controll-valor">
-                <p>Valor</p>
-                <input required type="number" placeholder="R$0,00">
-            </div><br>
-
-            <br>
-            <div class="container-btn-add">
-                <div class="btn-adicionar">
-                    <a>
-                        <button type="submit" name="save" class="btn-adicionar">Adicionar Transação</button>
-                    </a>
-                </div>
+                <label>Valor</label>
+                <input required type="text" placeholder="R$0,00">
             </div>
+
+            <button type="submit" name="save" class="botao-adicionar">Adicionar Transação</button>
+
         </div>
 
         <!-- EXTRATO COMEÇA AQUI -->
 
-        <div class="extract-container">
-            <div class="extract-title">
+        <div class="extrato">
+            <div class="titulo-extrato">
                 <strong>Extrato de Transações</strong>
             </div>
 
