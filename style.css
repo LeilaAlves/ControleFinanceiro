@@ -31,6 +31,16 @@ header {
     color: #333333;
 }
 
+h5 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
 .menu {
     color: #FFFFFF;
     border: none;
@@ -89,40 +99,41 @@ h3 {
     display: flex;
     align-items: stretch;
     width: 100%;
-    border-bottom: 2px solid #E0E0E0;
+    border-bottom: 1px solid #979797;
     flex-direction: column;
-    padding: 20px;
+    padding-bottom: 25px;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
 }
 
-.transacao-titulo {
-    visibility: hidden;
+#transacao-titulo {
+    display: none;
 }
 
-strong {
+#extrato {
     display: flex;
     justify-content: center;
     flex-direction: row;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 22px;
 }
 
-.extrato {
+#tabela-extrato {
     padding-top: 35px;
     display: flex;
     align-items: stretch;
     justify-content: space-evenly;
     width: 100%;
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: 400;
+    height: 20px;
+    left: 109px;
+    top: 21px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
     line-height: 22px;
-    letter-spacing: 0px;
-    text-align: right;
 }
 
 
