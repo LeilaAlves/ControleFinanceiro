@@ -27,15 +27,13 @@
     <!-- menu em progresso -->
 
     <main>
-<!--***********************************************************************-->
+        <!--***********************************************************************-->
         <!-- CONTROLE FINANCEIRO COMEÇA AQUI -->
 
-        <div class="controle-financeiro">
-            <div class="transacao-titulo">
-                <strong>Nova Transação</strong>
-            </div>
+        <div>
+                <h5 id="transacao-titulo">Nova Transação</h5>
 
-            <div class="tipo-transacao">
+            <div>
                 <label for="estado-transacao">
                     Tipo de Transação
                 </label>
@@ -45,14 +43,14 @@
                 </select>
             </div>
 
-            <div class="controle-mercadoria">
+            <div>
                 <label>
                     Nome da Mercadoria
                 </label>
                 <input required type="text" placeholder="Input">
             </div>
 
-            <div class="controll-valor">
+            <div>
                 <label>Valor</label>
                 <input required type="text" placeholder="R$0,00">
             </div>
@@ -62,41 +60,49 @@
         </div>
 
         <!-- FIM DE CONTROLE FINANCEIRO -->
-<!--***********************************************************************-->
+        <!--***********************************************************************-->
         <!-- EXTRATO COMEÇA AQUI -->
 
-        <div class="extrato">
-            <div class="titulo-extrato">
-                <strong>Extrato de Transações</strong>
-            </div>
 
-            <div class="extract">
-                <div class="marcadoria">
-                    <h4>Mercadoria</h4>
+                <h5 id="extrato">Extrato de Transações</h5>
 
-                    <p>Mercadoria 1</p>
-                    <p>Mercadoria 2</p>
-                    <p>Mercadoria 3</p>
-                    <h4>Total</h4>
-                </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Mercadoria</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
 
-                <div class="valor-transação">
-                    <h4>Valor</h4>
-                    <p>
-                        <R1>R$12.999,00</R1>
-                    </p>
-                    <p>
-                        <R1>R$99,99</R1>
-                    </p>
-                    <p>
-                        <R1>R$9,99</R1>
-                    </p>
-                    <h4 id="lucro-prejuizo">
-                        <R1>R$12.909,99</R1>
-                    </h4>
-                    <em class="lucro">[Lucro]</em>
-                </div>
-            </div>
+                <tbody>
+                    <tr>
+                        <td>+</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>R$12,999,99</td>
+                    </tr>
+
+                    <tr>
+                        <td>-</td>
+                        <td>Temporibus exercitationem repellat</td>
+                        <td>R$99,99</td>
+                    </tr>
+
+                    <tr>
+                        <td>+</td>
+                        <td>Lorem ipsilone</td>
+                        <td>R$9,99</td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>Total</td>
+                        <td>R$12,909,99</td>
+                        <!-- <p>[Lucro]</p> -->
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
     </main>
 

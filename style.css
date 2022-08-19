@@ -26,7 +26,6 @@ header {
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    display: flex;
     align-items: center;
     text-align: center;
     color: #333333;
@@ -38,12 +37,15 @@ header {
     cursor: pointer;
 }
 
-main .extract {
+main {
     display: flex;
     margin-left: 20px;
     margin-right: 20px;
-    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
 }
+
 
 input,
 #estado-transacao {
@@ -100,15 +102,29 @@ h3 {
     visibility: hidden;
 }
 
-.extract-title {
-    padding-top: 35px;
+strong {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-direction: row;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
 }
 
-P.valor-transação p.mercadoria {
-    border-bottom: 2px #333333 solid;
+.extrato {
+    padding-top: 35px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    width: 100%;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: right;
 }
+
 
 /*FIM DA RESPONSIVIDADE MOBILE */
 /*********************************************************/
