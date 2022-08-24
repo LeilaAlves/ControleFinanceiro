@@ -1,8 +1,8 @@
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
-    margin-left: 0%;
-    margin-right: 0%;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 body {
@@ -15,6 +15,7 @@ header {
     justify-content: space-between;
     align-content: center;
     flex-direction: row;
+    margin-bottom: 22px;
     background-color: #E0E0E0;
     height: 100%;
     padding-right: 25px;
@@ -25,13 +26,14 @@ header {
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    line-height: 24px;
     align-items: center;
     text-align: center;
     color: #333333;
 }
 
-h5 {
+
+#transacao-titulo,
+#extrato-titulo {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -41,19 +43,19 @@ h5 {
     line-height: 22px;
 }
 
-.menu {
+/* #menu::before {
     color: #FFFFFF;
     border: none;
     cursor: pointer;
-}
+} */
 
 main {
     display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 
@@ -74,12 +76,6 @@ input,
     line-height: 22px;
     color: #888888;
     padding-left: 10px;
-}
-
-
-h3 {
-    font-style: normal;
-    font-weight: 400;
 }
 
 .botao-adicionar {
@@ -112,30 +108,27 @@ h3 {
     display: none;
 }
 
-#extrato {
+td {
+    border-bottom-style: ridge;
+}
+
+thead {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
 }
 
 #tabela-extrato {
-    padding-top: 35px;
     display: flex;
     align-items: stretch;
-    justify-content: space-evenly;
     width: 100%;
     height: 20px;
-    left: 109px;
-    top: 21px;
     font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
     line-height: 22px;
+    font-size: 18px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-collapse: collapse;
+    justify-content: center;
 }
-
 
 /*FIM DA RESPONSIVIDADE MOBILE */
 /*********************************************************/
@@ -170,14 +163,15 @@ h3 {
         padding: 20px;
     }
 
-    .extract-title,
-    .transacao-titulo {
+    /* #extrato-titulo, */
+    #transacao-titulo {
         padding-top: 35px;
         display: flex;
         justify-content: space-evenly;
     }
 
-    main .extract {
+    main,
+    #tabela-extrato {
         display: flex;
         flex-direction: row;
         margin-left: 20px;

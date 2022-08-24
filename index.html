@@ -18,7 +18,9 @@
     <header>
         <img src="./Ellipse 13.svg" alt="logo" />
         <p>Controle Financeiro</p>
-        <img src="./menu.jpg" alt="menu">
+        <a id="menu">
+            <img src="./menu.jpg" alt="menu">
+        </a>
         <!-- <nav class="dropdown">
             <a href="#">Cadastro de transações</a>
             <a href="#">Limpar dados</a>
@@ -31,7 +33,7 @@
         <!-- CONTROLE FINANCEIRO COMEÇA AQUI -->
 
         <div class="controle-financeiro">
-                <h5 id="transacao-titulo">Nova Transação</h5>
+            <h5 id="transacao-titulo">Nova Transação</h5>
 
             <div>
                 <label for="estado-transacao">
@@ -63,49 +65,45 @@
         <!--***********************************************************************-->
         <!-- EXTRATO COMEÇA AQUI -->
 
+        <h5 id="extrato-titulo">Extrato de Transações</h5>
+        <table id="tabela-extrato">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Mercadoria</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
 
-                <h5 id="extrato">Extrato de Transações</h5>
+            <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>R$12,999,99</td>
+                </tr>
 
-            <table id="tabela-extrato">
-                <thead>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Mercadoria</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
+                <tr>
+                    <td>-</td>
+                    <td>Temporibus exercitationem</td>
+                    <td>R$99,99</td>
+                </tr>
 
-                <tbody>
-                    <tr>
-                        <td>+</td>
-                        <td>Lorem ipsum dolor sit amet</td>
-                        <td>R$12,999,99</td>
-                    </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Lorem ipsilone</td>
+                    <td>R$9,99</td>
+                </tr>
 
-                    <tr>
-                        <td>-</td>
-                        <td>Temporibus exercitationem repellat</td>
-                        <td>R$99,99</td>
-                    </tr>
-
-                    <tr>
-                        <td>+</td>
-                        <td>Lorem ipsilone</td>
-                        <td>R$9,99</td>
-                    </tr>
-
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>Total</td>
-                        <td>R$12,909,99</td>
-                        <!-- <p>[Lucro]</p> -->
-                    </tr>
-                </tbody>
-            </table>
-
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>Total</td>
+                    <td>R$12,909,99</td>
+                    <!-- <p>[Lucro]</p> -->
+                </tr>
+            </tbody>
+        </table>
         </div>
     </main>
-
 
 </body>
 
