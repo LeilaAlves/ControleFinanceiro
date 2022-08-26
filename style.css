@@ -36,11 +36,14 @@ header {
 #extrato-titulo {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: center;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
+    margin: 22px;
+    align-items: center;
+    flex-direction: row;
 }
 
 /* #menu::before {
@@ -108,16 +111,24 @@ input,
     display: none;
 }
 
-td {
+td, th {
     border-bottom-style: ridge;
+    padding: 13px;
+
 }
 
-thead {
+th {
     display: flex;
 }
+
+#primeira-linha-tabela {
+    border-bottom-style: ridge;
+    padding: 15px;
+}
+
 
 #tabela-extrato {
-    display: flex;
+    display: block;
     align-items: stretch;
     width: 100%;
     height: 20px;
@@ -128,6 +139,11 @@ thead {
     flex-wrap: nowrap;
     border-collapse: collapse;
     justify-content: center;
+}
+
+#total-extrato {
+    border-top-style: double;
+    font-size: bold;
 }
 
 /*FIM DA RESPONSIVIDADE MOBILE */
@@ -163,7 +179,7 @@ thead {
         padding: 20px;
     }
 
-    /* #extrato-titulo, */
+    #extrato-titulo,
     #transacao-titulo {
         padding-top: 35px;
         display: flex;
