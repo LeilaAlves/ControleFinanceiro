@@ -11,7 +11,7 @@ body {
 }
 
 /*RESPONSIVIDADE MOBILE*/
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -41,18 +41,46 @@ header {
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    width: 100%;
     line-height: 22px;
     margin: 22px;
     align-items: center;
     flex-direction: row;
 }
 
-/* #menu::before {
-    color: #FFFFFF;
+.link-menu {
+    background-color: #C4C4C4;
+    color: #333333;
+    padding: 16px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.caixa-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.caixa-menu a {
+    color: #FFFFFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.caixa-menu a:hover {
+    background-color: #333333;
 } */
+
 
 main {
     display: flex;
@@ -116,7 +144,8 @@ input,
 td, th {
     border-bottom-style: ridge;
     padding: 13px;
-
+    display: table-cell;
+    text-align: justify;
 }
 
 #primeira-linha-tabela {
@@ -139,15 +168,11 @@ td, th {
     font-size: bold;
 }
 
-#menu {
-
-}
-
 /*FIM DA RESPONSIVIDADE MOBILE */
 /*********************************************************/
 /* RESPONSIVIDADE TABLET PORTRAIT */
 
-@media screen and (min-width:821px) and (max-width: 1023px) {
+@media screen and (min-width:412px) {
     header {
         display: flex;
         font-size: 22px;
