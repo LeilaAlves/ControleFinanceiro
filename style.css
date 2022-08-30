@@ -113,34 +113,34 @@ header {
     transition: transform 0.25s cubic-bezier(0.76, 0, 0.24, 1);
     transition-duration: .25s;
 }
-
 .menu-caixa {
     display: block;
     position: fixed;
     top: 0px;
-    left: -100%;
-    width: 351px;
-    height: 1000px;
-    margin: 0;
-    padding: 80px 0;
+    left: -180%;
+    width: 336px;
+    height: 1164px;
+    margin: 24px;
+    padding: 86px 0;
     list-style: none;
     background-color: #333333;
     transition-duration: .25s;
 }
 
 .menu-caixa {
-    display: block;
-    padding: 12px 24px;
+    display: flex;
     font-size: 20px;
     font-weight: 600;
     transition-duration: .25s;
     text-align-last: end;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    top: -55px;
 }
-
 .item-menu {
-    display: block;
+    display: flex;
     background-color: #333333;
     color: #C4C4C4;
     font-family: 'Lato';
@@ -148,17 +148,17 @@ header {
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
+    height: 32px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .item-menu:hover {
-    display: block;
+    display: flex;
     background-color: #C4C4C4;
-    color: #333333;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
+    background-size: 100%;
+    color: #333;
 }
 
 /* fim menu */
