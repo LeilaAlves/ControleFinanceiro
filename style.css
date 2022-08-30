@@ -49,17 +49,26 @@ header {
 #menu:checked+.botao-menu>span {
     transform: rotate(0deg);
     right: 265px;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap
 }
 
 #menu:checked+.botao-menu>span::before {
-    top: 20px;
-    transform: rotate(0deg);
+    bottom: 20;
+    transform: rotate(50deg);
     background-color: #FFFFFF;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: #fffffff;
 }
 
 #menu:checked+.botao-menu>span::after {
     top: 20px;
-    transform: rotate(45deg);
+    transform: rotate(317deg);
     background-color: #FFFFFF;
 }
 
@@ -85,15 +94,15 @@ header {
     width: 100%;
     height: 2px;
     background-color: #616161;
-
-
+    color: #fff;
 }
 
 .botao-menu>span::before {
     content: '';
-    top: -8px;
+    top: 20px;
     transition: transform 0.25s cubic-bezier(0.76, 0, 0.24, 1);
     transition-duration: .25s;
+    z-index: 2;
 }
 
 .botao-menu>span::after {
@@ -121,7 +130,6 @@ header {
 .menu-caixa {
     display: block;
     padding: 12px 24px;
-    color: #333333;
     font-size: 20px;
     font-weight: 600;
     transition-duration: .25s;
@@ -130,9 +138,26 @@ header {
     flex-wrap: nowrap;
 }
 
+.item-menu {
+    display: block;
+    background-color: #333333;
+    color: #C4C4C4;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+
 .item-menu:hover {
     display: block;
     background-color: #C4C4C4;
+    color: #333333;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 /* fim menu */
