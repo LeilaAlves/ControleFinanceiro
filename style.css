@@ -36,6 +36,7 @@ header {
 
 #menu {
     opacity: 0;
+
 }
 
 .menu-hamburger {
@@ -182,6 +183,8 @@ main {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 input,
@@ -227,8 +230,6 @@ input,
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 #transacao-titulo {
