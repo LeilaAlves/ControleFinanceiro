@@ -3,6 +3,7 @@
     font-family: 'Lato', sans-serif;
     margin-left: 0px;
     margin-right: 0px;
+    text-decoration: none;
 }
 
 body {
@@ -37,18 +38,29 @@ header {
     opacity: 0;
 }
 
+.menu-hamburger {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    color: #FFFFFF;
+}
+
 #menu:checked+.botao-menu>span {
-    transform: rotate(45deg);
+    transform: rotate(0deg);
+    right: 265px;
 }
 
 #menu:checked+.botao-menu>span::before {
-    top: 0;
+    top: 20px;
     transform: rotate(0deg);
+    background-color: #FFFFFF;
 }
 
 #menu:checked+.botao-menu>span::after {
-    top: 0;
-    transform: rotate(90deg);
+    top: 20px;
+    transform: rotate(45deg);
+    background-color: #FFFFFF;
 }
 
 #menu:checked.menu-caixa {
@@ -56,9 +68,10 @@ header {
 }
 
 .botao-menu {
-    position: fixed;
+    display: flex;
+    align-items: center;
     top: 20px;
-    width: 26px;
+    width: 42px;
     height: 26px;
     cursor: pointer;
     z-index: 1;
@@ -72,47 +85,54 @@ header {
     width: 100%;
     height: 2px;
     background-color: #616161;
-    transition-duration: .25s;
+
+
 }
 
 .botao-menu>span::before {
     content: '';
     top: -8px;
+    transition: transform 0.25s cubic-bezier(0.76, 0, 0.24, 1);
+    transition-duration: .25s;
 }
 
 .botao-menu>span::after {
     content: '';
-    top: 8px;
+    top: 6px;
+    color: #FFFFFF;
+    transition: transform 0.25s cubic-bezier(0.76, 0, 0.24, 1);
+    transition-duration: .25s;
 }
 
 .menu-caixa {
     display: block;
     position: fixed;
-    top: 0;
+    top: 0px;
     left: -100%;
-    width: 300px;
-    height: 100%;
+    width: 351px;
+    height: 1000px;
     margin: 0;
     padding: 80px 0;
     list-style: none;
-    background-color: #ECEFF1;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    background-color: #333333;
     transition-duration: .25s;
 }
 
 .menu-caixa {
     display: block;
     padding: 12px 24px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
+    color: #333333;
     font-size: 20px;
     font-weight: 600;
-    text-decoration: none;
     transition-duration: .25s;
+    text-align-last: end;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
-.menu-caixa:hover {
-    background-color: #CFD8DC;
+.item-menu:hover {
+    display: block;
+    background-color: #C4C4C4;
 }
 
 /* fim menu */
