@@ -149,6 +149,11 @@ header {
     padding: 20px;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    width: 100%;
+    border: none;
 }
 
 .item-menu:hover {
@@ -304,10 +309,11 @@ th {
 
     .botao-adicionar {
         height: 33px;
-        width: 200px;
+        width: 100%;
         left: 528px;
         top: 240px;
         border-radius: 4px;
+        margin-bottom: 20px;
     }
 
     .mercadoria-nome {
@@ -321,6 +327,15 @@ th {
 /* RESPONSIVIDADE TABLET LANDSCAPE */
 
 @media screen and (min-width: 1112px) {
+
+    header {
+        display: flex;
+        justify-content: start;
+    }
+
+    p {
+        margin-left: 20px;
+    }
 
     main {
         display: flex;
@@ -354,10 +369,20 @@ th {
     .controle-financeiro {
         margin-right: 10px;
         height: 344px;
-        width: 400px;
+        width: 600px;
         left: 20px;
         top: 130px;
         border-radius: 0px;
+    }
+
+    .menu-hamburger {
+        display: none;
+    }
+
+    .menu-caixa {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 
 }
