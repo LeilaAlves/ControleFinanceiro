@@ -23,11 +23,11 @@
             <input id="menu" type="checkbox" />
             <label class="botao-menu" for="menu">
                 <span>
-            <ul class="menu-caixa">
-                <li><a class="item-menu" href="#">Cadastro de transações</a></li>
-                <li><a class="item-menu" href="#">Limpar Dados</a></li>
-            </ul>
-            </span>
+                    <ul class="menu-caixa">
+                        <li><a class="item-menu" href="#">Cadastro de transações</a></li>
+                        <li><a class="item-menu" href="#">Limpar Dados</a></li>
+                    </ul>
+                </span>
             </label>
         </div>
     </header>
@@ -38,31 +38,44 @@
         <!-- CONTROLE FINANCEIRO COMEÇA AQUI -->
 
         <div class="controle-financeiro">
-            <h5 id="transacao-titulo">Nova Transação</h5>
 
-            <div>
-                <label for="estado-transacao">
-                    Tipo de Transação
-                </label>
-                <select id="estado-transacao">
-                    <option value="valor-compra" selected>Compra</option>
-                    <option value="valor-venda">Venda</option>
-                </select>
+            <div class="div-titulo-transacao">
+                <h5 id="transacao-titulo">Nova Transação</h5>
             </div>
 
             <div>
-                <label>
-                    Nome da Mercadoria
-                </label>
-                <input required type="text" placeholder="Input">
+                <div class="labels-container">
+                    <div>
+                        <label for="estado-transacao">
+                            Tipo de Transação
+                        </label>
+                        <select id="estado-transacao">
+                            <option value="valor-compra" selected>Compra</option>
+                            <option value="valor-venda">
+                                Venda
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="mercadoria-nome">
+                        <label>
+                            Nome da Mercadoria
+                        </label>
+                        <input required type="text" placeholder="Input">
+                    </div>
+
+                    <div>
+                        <label>
+                            Valor
+                        </label>
+                        <input required type="text" placeholder="R$0,00">
+                    </div>
+                </div>
             </div>
 
-            <div>
-                <label>Valor</label>
-                <input required type="text" placeholder="R$0,00">
-            </div>
-
-            <button type="submit" name="save" class="botao-adicionar">Adicionar Transação</button>
+            <button type="submit" name="save" class="botao-adicionar">
+                Adicionar Transação
+            </button>
 
         </div>
 
@@ -70,43 +83,47 @@
         <!--***********************************************************************-->
         <!-- EXTRATO COMEÇA AQUI -->
 
-        <h5 id="extrato-titulo">Extrato de Transações</h5>
-        <table id="tabela-extrato">
-            <thead>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th>Mercadoria</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
+        <div class="grupo-extrato">
+            <h5 id="extrato-titulo">Extrato de Transações</h5>
+            <table id="tabela-extrato">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Mercadoria</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <tr id="primeira-linha-tabela">
-                    <td>+</td>
-                    <td>Lorem ipsum dolor sit amet</td>
-                    <td>R$12,999,99</td>
-                </tr>
+                <tbody>
+                    <tr id="primeira-linha-tabela">
+                        <td>+</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>R$12,999,99</td>
+                    </tr>
 
-                <tr>
-                    <td>-</td>
-                    <td>Temporibus exercitationem</td>
-                    <td>R$99,99</td>
-                </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>Temporibus exercitationem</td>
+                        <td>R$99,99</td>
+                    </tr>
 
-                <tr>
-                    <td>+</td>
-                    <td>Lorem ipsilone</td>
-                    <td>R$9,99</td>
-                </tr>
+                    <tr>
+                        <td>+</td>
+                        <td>Lorem ipsilone</td>
+                        <td>R$9,99</td>
+                    </tr>
 
-                <tr id="total-extrato">
-                    <td>&nbsp;</td>
-                    <td>Total</td>
-                    <td>R$12,909,99</td>
-                    <!-- <p>[Lucro]</p> -->
-                </tr>
-            </tbody>
-        </table>
+                    <tr id="total-extrato">
+                        <td>&nbsp;</td>
+                        <td>Total</td>
+                        <td>R$12,909,99
+                            <span id="lucro">
+                                [Lucro]
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 
