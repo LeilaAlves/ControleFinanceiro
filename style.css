@@ -391,3 +391,14 @@ th {
 }
 
 /* FIM DA RESPONSIVIDADE TABLET LANDSCAPE */
+/*********************************************************/
+/* RESPONSIVIDADE TABLET DESKTOP */
+
+@media screen and (min-width: 1500px) {
+
+    main {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+}
