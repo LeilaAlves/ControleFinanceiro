@@ -337,10 +337,15 @@ th {
         margin-left: 20px;
     }
 
+    li {
+        display:flex
+    }
+
     main {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        margin-top: 26px;
         margin-left: 20px;
         margin-right: 20px;
         justify-content: space-around;
@@ -367,12 +372,10 @@ th {
     }
 
     .controle-financeiro {
+        box-sizing: none;
         margin-right: 10px;
-        height: 344px;
         width: 600px;
         left: 20px;
-        top: 130px;
-        border-radius: 0px;
     }
 
     .menu-hamburger {
@@ -386,3 +389,5 @@ th {
     }
 
 }
+
+/* FIM DA RESPONSIVIDADE TABLET LANDSCAPE */
