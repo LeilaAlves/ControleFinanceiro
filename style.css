@@ -34,11 +34,22 @@ header {
     color: #333333;
 }
 
+.logo-titulo-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+p {
+    margin-left: 20px;
+}
+
 /*menu*/
 
 #menu {
     opacity: 0;
-
 }
 
 .menu-hamburger {
@@ -288,6 +299,13 @@ th {
     .labels-container {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    input,
+    select option {
+        width: 100%;
     }
 
     .menu-caixa {
@@ -327,18 +345,23 @@ th {
 /* RESPONSIVIDADE TABLET LANDSCAPE */
 
 @media screen and (min-width: 1112px) {
-
-    header {
-        display: flex;
-        justify-content: start;
-    }
-
     p {
         margin-left: 20px;
     }
 
+    .botao-menu>span,
+    .botao-menu>span::before,
+    .botao-menu>span::after {
+        display: contents;
+    }
+
+    .menu-caixa {
+        display: flex;
+        border-radius: 5px;
+    }
+
     li {
-        display:flex
+        display: flex
     }
 
     main {
@@ -378,24 +401,62 @@ th {
         left: 20px;
     }
 
-    .menu-hamburger {
-        display: none;
-    }
-
     .menu-caixa {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        position: unset;
+        width: 350px;
+        height: 40px;
+        margin: 0px;
+        top: 0;
+        left: 0;
+        padding: 0px;
+        align-items: stretch;
+        background-color: #fff;
         flex-wrap: nowrap;
     }
 
+    .item-menu {
+        color: #000;
+        background-color: #fff;
+        height: 0px;
+        padding: 0px;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu-caixa>li:nth-child(1):after {
+        content: "|";
+        margin: 0 20px;
+        color: #000;
+    }
+
+    .menu-caixa>li {
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botao-menu>span::after,
+    .botao-menu>span::before {
+        display: none;
+    }
+
+    .botao-menu {
+        display: flex;
+        top: 0;
+        width: 100%;
+    }
 }
+
+
 
 /* FIM DA RESPONSIVIDADE TABLET LANDSCAPE */
 /*********************************************************/
 /* RESPONSIVIDADE TABLET DESKTOP */
 
 @media screen and (min-width: 1500px) {
-
     main {
         margin-left: 200px;
         margin-right: 200px;
