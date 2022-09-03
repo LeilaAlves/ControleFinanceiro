@@ -273,6 +273,7 @@ th {
 
 #total-extrato {
     border-top-style: double;
+    border-bottom-style: hidden;
     font-size: bold;
 }
 
@@ -291,9 +292,10 @@ th {
         border: 2px solid #E0E0E0;
         border-radius: 5px;
         flex-wrap: nowrap;
-        justify-content: space-around;
         flex-direction: column;
         padding: 20px;
+        align-items: center;
+        align-content: center;
     }
 
     .labels-container {
@@ -323,6 +325,14 @@ th {
 
     .labels-container {
         display: inline-flex;
+    }
+
+    .div-botao-adcionar {
+        display: flex;
+        height: 33px;
+        width: 200px;
+        top: 240px;
+        border-radius: 0px;
     }
 
     .botao-adicionar {
@@ -407,7 +417,7 @@ th {
         justify-content: center;
         position: unset;
         width: 350px;
-        height: 40px;
+        height: 30px;
         margin: 0px;
         top: 0;
         left: 0;
