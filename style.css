@@ -329,12 +329,9 @@ th {
 .botao-adicionar {
     display: flex;
     height: 33px;
-    width: 200px;
-    left: 0px;
-    margin-left: auto;
     top: 5px;
+    margin-top: 20px;
     margin-bottom: 20px;
-    position: relative;
 }
 
     .mercadoria-nome {
