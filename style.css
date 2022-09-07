@@ -126,6 +126,11 @@ p {
     transition-duration: .25s;
 }
 
+.menu-caixa:hover {
+    display: flex;
+    align-items: stretch;
+}
+
 .menu-caixa {
     position: fixed;
     left: -180%;
@@ -137,7 +142,7 @@ p {
     background-color: #333333;
     display: flex;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     transition-duration: .25s;
     text-align-last: end;
     flex-direction: column;
@@ -153,7 +158,7 @@ p {
     color: #C4C4C4;
     font-family: 'Lato';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     height: 32px;
@@ -220,7 +225,6 @@ input,
 
 .botao-adicionar {
     display: flex;
-    margin-top: 20px;
     justify-content: center;
     color: #FFFFFF;
     background: #333333;
@@ -333,20 +337,22 @@ th {
         width: 200px;
         top: 240px;
         border-radius: 0px;
+        align-items: center;
     }
 
     .botao-adicionar {
         height: 33px;
         width: 100%;
-        left: 528px;
-        top: 240px;
-        border-radius: 4px;
+        left: 241px;
+        top: 5px;
         margin-bottom: 20px;
+        position: relative;
     }
 
     .mercadoria-nome {
         margin-right: 20px;
         margin-left: 20px;
+        margin-bottom: 20px;
     }
 }
 
@@ -460,8 +466,6 @@ th {
     }
 }
 
-
-
 /* FIM DA RESPONSIVIDADE TABLET LANDSCAPE */
 /*********************************************************/
 /* RESPONSIVIDADE TABLET DESKTOP */
@@ -471,5 +475,4 @@ th {
         margin-left: 200px;
         margin-right: 200px;
     }
-
 }
