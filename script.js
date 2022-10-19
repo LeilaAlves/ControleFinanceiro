@@ -10,7 +10,6 @@ function formatoPreco() {
 //validando os inputs//
 
 function validarBotaoAdicionar() {
-
     const mercadoria = document.getElementById('mercadoria').value
     const preco = document.getElementById('preco').value
 
