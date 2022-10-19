@@ -1,17 +1,24 @@
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
     text-decoration: none;
 }
 
 body {
-    margin: 0%;
+    margin: 0;
     height: 100%;
 }
 
 /*RESPONSIVIDADE MOBILE*/
+
+.centralizar-header {
+    max-width: 100%;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
 
 header {
     display: flex;
@@ -20,7 +27,7 @@ header {
     flex-direction: row;
     margin-bottom: 22px;
     background-color: #E0E0E0;
-    height: 100%;
+    width: 100%;
     padding-right: 25px;
     padding-left: 25px;
     flex-wrap: nowrap;
@@ -40,10 +47,14 @@ header {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-content: center;
+    width: 100%
 }
+
+
 
 p {
     margin-left: 20px;
+    width: 100%
 }
 
 /*menu*/
@@ -205,7 +216,7 @@ main {
 }
 
 input,
-#estado-transacao {
+#estTransacao {
     width: stretch;
     width: -webkit-fill-available;
     width: -moz-available;
@@ -261,9 +272,11 @@ th {
     color: #333333;
 }
 
-#primeira-linha-tabela {
+#primeiraLinhaTabela {
+    display: inline-table;
     border-bottom-style: ridge;
     padding: 15px;
+    justify-content: center;
 }
 
 #tabela-extrato {
@@ -326,13 +339,19 @@ th {
         flex-direction: column;
     }
 
-.botao-adicionar {
-    display: flex;
-    height: 33px;
-    top: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    .div-botao-adicionar {
+        display: inline-flex;
+        height: 33px;
+        width: 200px;
+    }
+
+    .botao-adicionar {
+        display: flex;
+        height: 33px;
+        top: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
     .mercadoria-nome {
         margin-right: 20px;
@@ -345,7 +364,11 @@ th {
 /*********************************************************/
 /* RESPONSIVIDADE TABLET LANDSCAPE */
 
-@media screen and (min-width: 1112px) {
+@media screen and (min-width: 1100px) {
+    header {
+        justify-content: center;
+    }
+
     p {
         margin-left: 20px;
     }
@@ -362,7 +385,7 @@ th {
     }
 
     li {
-        display: flex
+        display: flex;
     }
 
     main {
@@ -373,7 +396,12 @@ th {
         margin-left: 20px;
         margin-right: 20px;
         justify-content: space-around;
-        align-items: center;
+        align-items: baseline;
+    }
+
+    .centralizar-header, main {
+        display: flex;
+        width: 1100px;
     }
 
     .labels-container {
@@ -419,7 +447,7 @@ th {
     }
 
     .item-menu {
-        color: #000;
+        color: #333333;
         background-color: #fff;
         height: 0px;
         padding: 0px;
@@ -430,7 +458,7 @@ th {
     .menu-caixa>li:nth-child(1):after {
         content: "|";
         margin: 0 20px;
-        color: #000;
+        color: #333333;
     }
 
     .menu-caixa>li {
@@ -448,16 +476,5 @@ th {
         display: flex;
         top: 0;
         width: 100%;
-    }
-}
-
-/* FIM DA RESPONSIVIDADE TABLET LANDSCAPE */
-/*********************************************************/
-/* RESPONSIVIDADE TABLET DESKTOP */
-
-@media screen and (min-width: 1500px) {
-    main {
-        margin-left: 200px;
-        margin-right: 200px;
     }
 }
