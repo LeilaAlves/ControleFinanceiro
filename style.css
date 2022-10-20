@@ -50,8 +50,6 @@ header {
     width: 100%
 }
 
-
-
 p {
     margin-left: 20px;
     width: 100%
@@ -272,7 +270,7 @@ th {
     color: #333333;
 }
 
-#primeiraLinhaTabela {
+#novaTransacaoUL {
     display: inline-table;
     border-bottom-style: ridge;
     padding: 15px;
@@ -397,6 +395,7 @@ th {
         margin-right: 20px;
         justify-content: space-around;
         align-items: baseline;
+        margin-inline: auto;
     }
 
     .centralizar-header, main {
