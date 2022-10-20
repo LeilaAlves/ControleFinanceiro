@@ -33,7 +33,6 @@ const addTransacaoDom = () => {
 
 addTransacaoDom()
 
-
 //máscara de preço - ítem 02 do readme//
 
 function formatoPreco() {
