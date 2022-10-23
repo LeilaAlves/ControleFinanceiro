@@ -367,6 +367,10 @@ th {
         justify-content: center;
     }
 
+    /* .logo-titulo-header {
+        width: 48%;
+    } */
+
     p {
         margin-left: 20px;
     }
@@ -398,7 +402,8 @@ th {
         margin-inline: auto;
     }
 
-    .centralizar-header, main {
+    .centralizar-header,
+    main {
         display: flex;
         width: 1100px;
     }

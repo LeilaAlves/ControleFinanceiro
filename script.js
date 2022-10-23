@@ -1,6 +1,8 @@
-//validando os inputs - ítem 01 do readme//
+//*****validando os inputs - ítem 01 do readme*****//
 
 const novaTransacaoUL = document.querySelector('#novaTransacaoUL');
+
+//cadastro novo item (obj)//
 
 const novoRegistro = [
     {
@@ -14,34 +16,56 @@ const novoRegistro = [
     }
 ]
 
+localStorage.setItem('mercadoria', 'preco');
+
+//fim de cadastro novo item (obj)//
+
+// especificando operadores//
+//matemáticos na listagem //
+
 const extrato = transacao => {
     const operador = transacao.amount < 0 ? '-' : '+';
-    const CSSClass = transacao.amount < 0 ? 'minus' : 'plus';
+    const CSSClass = transacao.amount < 0 ? 'compra' : 'venda';
     const operadorNegativo = Math.abs(transacao.amount);
     const li = document.createElement('li');
 
     li.classList.add(CSSClass);
     li.innerHTML = `
-        ${transacao.name} <span>${operador} R$ ${operadorNegativo} </span>
+        ${transacao.name} <span>${operador} R$ ${operadorNegativo}</span>
     `
-    novaTransacaoUL.prepend(li); //mostra a transação + recente primeiro//
+    novaTransacaoUL.prepend(li); 
 }
+
+const valoresAtualizados = ()  => {
+    const volumeTransacoes = novoRegistro.map(transacao => transacao.amount)
+    const total = volumeTransacoes.reduce((acumulator, number) => acumulator + number, 0).toFixed(2)
+}
+
+valoresAtualizados(total(0))
 
 const addTransacaoDom = () => {
-    novoRegistro.forEach(extrato);
+    novoRegistro.forEach(extrato)
+
 }
 
-addTransacaoDom()
+valoresAtualizados(extrato)
 
-//máscara de preço - ítem 02 do readme//
+//fim de especificando operadores//
+//matemáticos na listagem //
+
+//*****Máscara de preço - ítem 02 do readme*****//
+
+let valor = 0
 
 function formatoPreco() {
-    let valor = 0;
     const formatoValor = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    console.log()
     return formatoValor;
 }
+formatoPreco(formatoValor)
 
-//Armazenar em localStorage - ítem 03 do readme//
+
+//*****Armazenar em localStorage // atualizar calculo - ítem 03 do readme*****//
 
 function validarBotaoAdicionar() {
     const mercadoria = document.getElementById('mercadoria').value;
@@ -56,5 +80,7 @@ function validarBotaoAdicionar() {
     }
 }
 
-//Limpar dados - ítem 04 do readme//
+
+
+//*****Limpar dados - ítem 04 do readme*****//
 
