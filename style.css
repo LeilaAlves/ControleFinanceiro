@@ -277,6 +277,11 @@ th {
     justify-content: center;
 }
 
+#novaTransacaoUL::marker {
+marker-start: none;
+
+}
+
 #tabela-extrato {
     display: inline-table;
     width: 100%;

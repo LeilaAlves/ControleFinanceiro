@@ -1,86 +1,78 @@
-//*****validando os inputs - ítem 01 do readme*****//
-
 const novaTransacaoUL = document.querySelector('#novaTransacaoUL');
 
-//cadastro novo item (obj)//
+localStorage.setItem('mercadoria','valor');
 
 const novoRegistro = [
     {
-        id: () => {
-            const dateString = Date.now().toString(36);
-            const randomness = Math.random().toString(36);
-            return dateString + randomness;
-        },
-        mercadoria: true,
-        preco: true
+        transacao: InputDeviceInfo.option,
+        mercadoria: "",
+        valor: 0
     }
 ]
 
-localStorage.setItem('mercadoria', 'preco');
-
-//fim de cadastro novo item (obj)//
-
-// especificando operadores//
-//matemáticos na listagem //
-
 const extrato = transacao => {
-    const operador = transacao.amount < 0 ? '-' : '+';
-    const CSSClass = transacao.amount < 0 ? 'compra' : 'venda';
-    const operadorNegativo = Math.abs(transacao.amount);
+    const operador = transacao.value < 0 ? '-' : '+';
+    const estTransacao = transacao.value < 0 ? 'compra' : 'venda';
+    const mercadoriaTipo = mercadoria.value;
+    const mascValor = Math.abs(valor.value);
     const li = document.createElement('li');
 
-    li.classList.add(CSSClass);
+    li.classList.add(estTransacao);
     li.innerHTML = `
-        ${transacao.name} <span>${operador} R$ ${operadorNegativo}</span>
+    <span>${operador} ${mercadoriaTipo} R$ ${mascValor}</span>
     `
-    novaTransacaoUL.prepend(li); 
+    novaTransacaoUL.prepend(li);
+    console.log(novaTransacaoUL)
 }
 
-const valoresAtualizados = ()  => {
-    const volumeTransacoes = novoRegistro.map(transacao => transacao.amount)
+extrato(novoRegistro[0])
+
+const valoresAtualizados = () => {
+    const volumeTransacoes = novoRegistro.map(transacao => transacao.valor)
     const total = volumeTransacoes.reduce((acumulator, number) => acumulator + number, 0).toFixed(2)
+    return total
 }
 
-valoresAtualizados(total(0))
+const addTransacaoDom = () => { novoRegistro.forEach(extrato) }
 
-const addTransacaoDom = () => {
-    novoRegistro.forEach(extrato)
+valoresAtualizados()
 
-}
-
-valoresAtualizados(extrato)
-
-//fim de especificando operadores//
-//matemáticos na listagem //
-
-//*****Máscara de preço - ítem 02 do readme*****//
-
-let valor = 0
-
-function formatoPreco() {
+function formatoValor(valor) {
     const formatoValor = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    console.log()
     return formatoValor;
 }
-formatoPreco(formatoValor)
+
+formatoValor([0])
 
 
-//*****Armazenar em localStorage // atualizar calculo - ítem 03 do readme*****//
+
 
 function validarBotaoAdicionar() {
     const mercadoria = document.getElementById('mercadoria').value;
-    const preco = document.getElementById('preco').value;
+    const valor = document.getElementById('valor').value;
 
-    if (mercadoria == "" || preco == "0") {
+    if (mercadoria == "" || valor == "0") {
         return alert("Preencha os campos para seguir.");
     } else {
         const novoProduto = localStorage.getItem("novaTransacaoUL");
-        console.log(mercadoria, preco)
         return novoProduto;
     }
 }
 
 
+
+//*****validando os inputs - ítem 01 do readme*****//
+//*****Máscara de preço - ítem 02 do readme*****//
+// especificando operadores//
+//matemáticos na listagem //
+
+
+
+//fim de especificando operadores//
+//matemáticos na listagem //
+
+
+//*****Armazenar em localStorage // atualizar calculo - ítem 03 do readme*****//
 
 //*****Limpar dados - ítem 04 do readme*****//
 
