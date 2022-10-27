@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="div-botao-adicionar">
-                    <button type="button" class="botao-adicionar" onclick=validarBotaoAdicionar()>
+                    <button type="button" class="botao-adicionar" onclick=adicionarItem()>
                         Adicionar Transação
                     </button>
                 </div>
@@ -93,9 +93,14 @@
                         <th>Valor</th>
                     </tr>
                 </thead>
-                
+                <tbody id="extratoTBody">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </table>
-            <ul id="novaTransacaoUL"></ul>
         </div>
     </main>
     <script src="./script.js"></script>

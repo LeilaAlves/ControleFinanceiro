@@ -270,14 +270,14 @@ th {
     color: #333333;
 }
 
-#novaTransacaoUL {
+#extratoTBody {
     display: inline-table;
     border-bottom-style: ridge;
     padding: 15px;
     justify-content: center;
 }
 
-#novaTransacaoUL::marker {
+#extratoTBody::marker {
 marker-start: none;
 
 }
