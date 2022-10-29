@@ -214,7 +214,7 @@ main {
 }
 
 input,
-#estTransacao {
+#transacao {
     width: stretch;
     width: -webkit-fill-available;
     width: -moz-available;
@@ -268,13 +268,15 @@ th {
     display: table-cell;
     text-align: justify;
     color: #333333;
+    width: 100%;
 }
 
 #extratoTBody {
-    display: inline-table;
+    display: contents;
     border-bottom-style: ridge;
     padding: 15px;
     justify-content: center;
+    width: 100%;
 }
 
 #extratoTBody::marker {
@@ -284,6 +286,7 @@ marker-start: none;
 
 #tabela-extrato {
     display: inline-table;
+    table-layout: fixed;
     width: 100%;
     height: 20px;
     line-height: 22px;
