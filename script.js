@@ -1,4 +1,4 @@
-// teste para coleta de informações da localstorage//
+//teste para coleta de informações da localstorage//
 // var testeMercadoria = [
 //     {
 //         "transacao": "compra",
@@ -12,30 +12,24 @@
 //         "valor": 254.99
 //     },
 
-//     {
-//         "transacao": "venda",
-//         "mercadoria": "cabo USD",
-//         "valor": 148.15
-//     }
+//     
 // ]
 
-localStorage.getItem('mercadoria', JSON.stringify(mercadorias));
+var mercadorias = {
+    transacao: transacao,
+    mercadoria: "",
+    valor: 0
+}
 
-var mercadorias = [
-    {
-        "transacao": getSelection('venda', 'compra'),
-        "mercadoria": "",
-        "valor": 0
-    }
-];
+localStorage.setItem('mercadoria', JSON.stringify(mercadorias));
 
-stringMercadoria = localStorage.getItem('mercadoria')
+formatoExtrato()
+
+var stringMercadoria = localStorage.getItem('mercadoria')
 
 if (stringMercadoria) {
     mercadorias = JSON.parse(stringMercadoria)
 }
-
-
 
 function formatoExtrato() {
 
@@ -55,12 +49,9 @@ function formatoExtrato() {
 formatoExtrato()
 
 
-
-function adicionarItem() {
-    mercadoria.push(mercadorias);
+function adicionarItem(novo) {
+    mercadorias.push(novo);
     localStorage.setItem('mercadoria', JSON.stringify(mercadorias))
-
-    formatoExtrato()
 }
 
 
