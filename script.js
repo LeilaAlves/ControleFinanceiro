@@ -23,26 +23,26 @@ localStorage.setItem('chaveTransacao', JSON.stringify(mercadoriasTeste));  //set
 
 var stringMercadoria = localStorage.getItem('chaveTransacao') //getItem pega o valor do da chave utilizada// 
 
-console.log(stringMercadoria) //até aqui está funcionando//
+console.log(stringMercadoria) //até aqui está FUNCIONANDO//
 
 
 if (stringMercadoria) {
     var mercadoriasArray = JSON.parse(stringMercadoria)
 
-    console.log(mercadoriasArray) //até aqui está funcionando, traz o array de objetos //
+    console.log(mercadoriasArray) //até aqui está FUNCIONANDO, traz o array de objetos //
 }
 
 /////////////////////////////////////formato do extrato////////////////////////////////////////////////
 function formatoExtrato() {
 
-    document.querySelector('#extratoTBody', 'table tfoot').innerHTML = ''
+    document.querySelector('#extratoTBody', 'tfoot').innerHTML = ''
     let total = 0
 
     for (produto of mercadoriasArray) {
 
-        //transação soma ou subtrai//
+        //transação soma ou subtrai - FUNCIONANDO//
         total += produto.valor * (produto.transacao == 'venda' ? 1 : -1)
-        //transação soma ou subtrai//
+        //transação soma ou subtrai - FUNCIONANDO//
 
 
         document.querySelector('#extratoTBody').innerHTML += `
@@ -52,14 +52,16 @@ function formatoExtrato() {
             <td>${produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td> 
         </tr>
         `
-        document.prepend(transacaoUlTBody)
+        //máscara de valor acima - FUNCIONANDO//
 
-        //tfoot com lucro ou prejuízo//
-            document.querySelector('table tfoot').innerHTML += `
+        document.getElementById('#extratoTBody')
+
+        //tfoot com lucro ou prejuízo - FUNCIONANDO//
+            document.querySelector('tfoot').innerHTML += `
         <tr>
             <td></td>
             <td>Total</td>
-            <td> R$ ${total < 0 ? total * -1 : total} </td>
+            <td>${valor.total < 0 ? total * -1 : total} </td>
         </tr>
         
         <tr>
@@ -68,9 +70,9 @@ function formatoExtrato() {
             <td id= "saldo"> ${total < 0 ? '[Prejuízo]' : (total != 0 ? '[Lucro]' : '')} </td>
         </tr>
         `;
-        //tfoot com lucro ou prejuízo//
+        //tfoot com lucro ou prejuízo - FUNCIONANDO//
 
-        document.append(transacaoUlTfoot)
+        document.append('tfoot')
     }
 
     formatoExtrato()
@@ -78,15 +80,15 @@ function formatoExtrato() {
 
 /////////////////////////////////////fim do formato do extrato////////////////////////////////////////////
 
-// function adicionarItem(mercadoriasTeste) {
-//     mercadoriasTeste.push(mercadorias);
+function adicionarItem(mercadoriasArray) {
+    mercadorias.push(mercadoriasArray);
 
-//     localStorage.setItem('mercadoria', JSON.stringify(mercadorias))
+    localStorage.setItem('chaveTransacao', JSON.stringify(mercadorias))
 
-//     formatoExtrato()
-// }
+    formatoExtrato()
+}
 
-// adicionarItem()
+adicionarItem()
 
 
 //=======================================================================//
