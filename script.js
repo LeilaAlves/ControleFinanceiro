@@ -45,9 +45,8 @@ function formatoExtrato() {
     let total = 0
 
     for (produto of coletaDadosArray) {
-        total += produto.transacao == 'venda' ? 0 : -0
 
-        console.log(total += produto.valor * (produto.transacao == 'venda' ? 1 : -1))
+        total += produto.valor * (produto.transacao == 'venda' ? 1 : -1)
         //transação soma ou subtrai - FUNCIONANDO mas sem formatação//
         
 
