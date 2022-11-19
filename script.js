@@ -1,4 +1,4 @@
-var mercadoriasTeste = [{
+var coletaDados = [{
     "transacao": "venda",
     "mercadoria": "mouse",
     "valor": 65.80
@@ -12,21 +12,28 @@ var mercadoriasTeste = [{
     "transacao": "venda",
     "mercadoria": "mochila",
     "valor": 265.89
-}]
-
-var mercadorias = [];
-
-localStorage.setItem('chaveTransacao', JSON.stringify(mercadoriasTeste));  //setItem salva no localStorage (chave e valor)// 
-
-var stringMercadoria = localStorage.getItem('chaveTransacao') //getItem pega o valor do da chave utilizada// 
-
-console.log(stringMercadoria) //até aqui está FUNCIONANDO//
+},
+// {
+//     "transacao": "venda",
+//     "mercadoria": "carro",
+//     "valor": 70598.29
+// }
+]
 
 
-if (stringMercadoria) {
-    var mercadoriasArray = JSON.parse(localStorage.getItem('chaveTransacao'))
+var listaExtrato = [];
 
-    console.log(mercadoriasArray) //até aqui está FUNCIONANDO, traz o array de objetos //
+localStorage.setItem('chaveTransacao', JSON.stringify(coletaDados));  //setItem salva no localStorage (chave e valor)// 
+
+var stringDados = localStorage.getItem('chaveTransacao') //getItem pega o valor do da chave utilizada// 
+
+console.log(stringDados) //até aqui está FUNCIONANDO//
+
+
+if (stringDados) {
+    var coletaDadosArray = JSON.parse(localStorage.getItem('chaveTransacao'))
+
+    console.log(coletaDadosArray) //até aqui está FUNCIONANDO, traz o array de objetos //
 
 }
 
@@ -36,10 +43,13 @@ function formatoExtrato() {
 
     document.querySelector('#extratoTBody', 'tfoot').innerHTML = ''
     let total = 0
-    
 
-    for (produto of mercadoriasArray) {
-        total += produto.valor * (produto.transacao == 'venda' ? 1 : -1) //transação soma ou subtrai - FUNCIONANDO//
+    for (produto of coletaDadosArray) {
+        total += produto.transacao == 'venda' ? 0 : -0
+
+        console.log(total += produto.valor * (produto.transacao == 'venda' ? 1 : -1))
+        //transação soma ou subtrai - FUNCIONANDO mas sem formatação//
+        
 
         document.querySelector('#extratoTBody').innerHTML += `
         <tr>
@@ -49,7 +59,6 @@ function formatoExtrato() {
         </tr>
         `
         //máscara de valor acima - FUNCIONANDO//
-
         document.getElementById('#extratoTBody')
 
     }
@@ -75,27 +84,14 @@ function formatoExtrato() {
 
 formatoExtrato()
 
-
-
-
 /////////////////////////////////////fim do formato do extrato////////////////////////////////////////////
 
-function adicionarItem(mercadorias) {
-    mercadoriasArray.push(mercadorias);
+function adicionarItem(listaExtrato) {
+    coletaDadosArray.push(listaExtrato);
 
-    localStorage.setItem('chaveTransacao', JSON.stringify(mercadorias))
+    localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
 
     formatoExtrato()
 }
 
 adicionarItem()
-
-
-//=======================================================================//
-
-// function formatoValor(valor) {
-//     const formatoValor = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-//     return formatoValor;
-// }
-
-// formatoValor([0])
