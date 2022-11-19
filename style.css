@@ -300,15 +300,6 @@ tfoot tr {
     font-size: bold;
 }
 
-#saldo {
-    display: flex;
-    justify-content: top;
-    border-bottom-style: hidden;
-    padding-top: 0;
-    font-size: bold;    
-}
-
-
 /*FIM DA RESPONSIVIDADE MOBILE */
 /*********************************************************/
 /* RESPONSIVIDADE TABLET PORTRAIT */
