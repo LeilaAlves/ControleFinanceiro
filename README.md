@@ -6,7 +6,7 @@ https://goo.gl/yMrCaf
 
 Javascript:
 
-1 - Validar o formulário para que todos os campos sejam preenchidos.
+ok - 1 - Validar o formulário para que todos os campos sejam preenchidos.
 
 2 - Adicionar uma máscara no campo “Valor” para que apenas números sejam preenchidos e com a formatação correta. (Padrão: 10,90)
 

@@ -12,12 +12,7 @@ var coletaDados = [{
     "transacao": "venda",
     "mercadoria": "mochila",
     "valor": 265.89
-},
-// {
-//     "transacao": "venda",
-//     "mercadoria": "carro",
-//     "valor": 70598.29
-// }
+}
 ]
 
 
