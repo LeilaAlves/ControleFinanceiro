@@ -279,6 +279,25 @@ th {
     width: 100%;
 }
 
+/* #extratoTBody:nth-child() {
+    margin: 0px 10px;
+    width: 8.25px;
+}
+
+#extratoTBody:nth-child() {
+    justify-content: flex-start;
+    width: 80%;
+    word-break: break-all;
+}
+
+#extratoTBody:nth-child() {
+    width: 34%;
+    margin-right: 10px;
+    justify-content: flex-end;
+    text-align: right;
+    word-break: break-all;
+} */
+
 #extratoTBody::marker {
     marker-start: none;
 

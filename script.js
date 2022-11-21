@@ -65,7 +65,7 @@ function formatoExtrato() {
         <tr>
             <td></td>
             <td>Total</td>
-            <td> R$ ${total < 0 ? total * -1 : total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 }) } </td>
+            <td>${total < 0 ? total * -1 : total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 }) } </td>
         </tr>
         
         <tr>
