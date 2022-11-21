@@ -1,7 +1,7 @@
 var coletaDados = [{
     "transacao": "venda",
     "mercadoria": "mouse",
-    "valor": 65.80
+    "valor": 655.89
 },
 {
     "transacao": "compra",
@@ -16,7 +16,11 @@ var coletaDados = [{
 ]
 
 
-var listaExtrato = [];
+var listaExtrato = [{
+    "transacao": "",
+    "mercadoria": "",
+    "valor": 0
+}];
 
 localStorage.setItem('chaveTransacao', JSON.stringify(coletaDados));  //setItem salva no localStorage (chave e valor)// 
 
@@ -33,8 +37,9 @@ if (stringDados) {
 /////////////////////////////////////formato do extrato////////////////////////////////////////////////
 
 function formatoExtrato() {
-
+    
     document.querySelector('#extratoTBody', 'tfoot').innerHTML = ''
+
     let total = 0
 
     for (produto of listaExtrato) {
@@ -47,7 +52,7 @@ function formatoExtrato() {
         <tr>
             <td>${produto.transacao.value == 'venda' ? '+' : '-'} </td>
             <td>${produto.mercadoria}</td>
-            <td>${produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td> 
+            <td>${produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 }) }</td> 
         </tr>
         `
         //máscara de valor acima - FUNCIONANDO//
@@ -60,7 +65,7 @@ function formatoExtrato() {
         <tr>
             <td></td>
             <td>Total</td>
-            <td> R$ ${total < 0 ? total * -1 : total} </td>
+            <td> R$ ${total < 0 ? total * -1 : total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 }) } </td>
         </tr>
         
         <tr>
@@ -79,7 +84,7 @@ formatoExtrato()
 /////////////////////////////////////fim do formato do extrato////////////////////////////////////////////
 
 function adicionarItem(listaExtrato) {
-    listaExtrato.push(listaExtrato);
+    listaExtrato.push(coletaDados);
 
     localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
 
