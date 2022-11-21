@@ -21,14 +21,12 @@ var listaExtrato = [];
 localStorage.setItem('chaveTransacao', JSON.stringify(coletaDados));  //setItem salva no localStorage (chave e valor)// 
 
 var stringDados = localStorage.getItem('chaveTransacao') //getItem pega o valor do da chave utilizada// 
-
 console.log(stringDados) //até aqui está FUNCIONANDO//
 
-
 if (stringDados) {
-    var coletaDadosArray = JSON.parse(localStorage.getItem('chaveTransacao'))
+    listaExtrato = JSON.parse(stringDados)
 
-    console.log(coletaDadosArray) //até aqui está FUNCIONANDO, traz o array de objetos //
+    console.log(listaExtrato) //até aqui está FUNCIONANDO, traz o array de objetos //
 
 }
 
@@ -39,7 +37,7 @@ function formatoExtrato() {
     document.querySelector('#extratoTBody', 'tfoot').innerHTML = ''
     let total = 0
 
-    for (produto of coletaDadosArray) {
+    for (produto of listaExtrato) {
 
         total += produto.valor * (produto.transacao == 'venda' ? 1 : -1)
         //transação soma ou subtrai - FUNCIONANDO mas sem formatação//
@@ -47,7 +45,7 @@ function formatoExtrato() {
 
         document.querySelector('#extratoTBody').innerHTML += `
         <tr>
-            <td>${produto.transacao == 'venda' ? '+' : '-'} </td>
+            <td>${produto.transacao.value == 'venda' ? '+' : '-'} </td>
             <td>${produto.mercadoria}</td>
             <td>${produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td> 
         </tr>
@@ -81,7 +79,7 @@ formatoExtrato()
 /////////////////////////////////////fim do formato do extrato////////////////////////////////////////////
 
 function adicionarItem(listaExtrato) {
-    coletaDadosArray.push(listaExtrato);
+    listaExtrato.push(listaExtrato);
 
     localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
 
