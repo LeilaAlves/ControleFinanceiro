@@ -279,6 +279,14 @@ th {
     width: 100%;
 }
 
+#legenda {
+    display: flex;
+    padding-top: 0px;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    border-bottom: none;
+}
+
 /* #extratoTBody:nth-child() {
     margin: 0px 10px;
     width: 8.25px;

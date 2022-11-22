@@ -71,7 +71,7 @@ function formatoExtrato() {
         <tr>
             <td></td>
             <td></td>
-            <td> ${total < 0 ? '[Prejuízo]' : (total != 0 ? '[Lucro]' : '')} </td>
+            <td id="legenda"> ${total < 0 ? '[Prejuízo]' : (total != 0 ? '[Lucro]' : '')} </td>
         </tr>
         `;
 
