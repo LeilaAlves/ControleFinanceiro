@@ -232,6 +232,17 @@ input,
     padding-left: 10px;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+
+}
+
 .botao-adicionar {
     display: flex;
     justify-content: center;
@@ -242,6 +253,7 @@ input,
     width: 100%;
     border-radius: 4px;
     align-items: center;
+    margin-top: 20px;
 }
 
 .controle-financeiro {
@@ -372,6 +384,7 @@ tfoot tr {
         display: inline-flex;
         height: 33px;
         width: 200px;
+        
     }
 
     .botao-adicionar {
