@@ -10,7 +10,7 @@ Javascript:
 
 2 - Adicionar uma máscara no campo “Valor” para que apenas números sejam preenchidos e com a formatação correta. (Padrão: 10,90)
 
-3 - Ao adicionar uma nova transação, persistir no Local Storage e já atualizar a lista com o extrato. 
+ok - 3 - Ao adicionar uma nova transação, persistir no Local Storage e já atualizar a lista com o extrato. 
 
 ok - 4 - Atualizar o cálculo apresentado.
 
