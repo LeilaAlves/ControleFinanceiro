@@ -4,9 +4,9 @@ localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));  //setItem
 
 var stringDados = localStorage.getItem('chaveTransacao') //getItem pega o valor do da chave utilizada// 
 
-if (stringDados) {
-    listaExtrato = JSON.parse(stringDados) //até aqui está FUNCIONANDO, traz o array de objetos //
-}
+// if (stringDados) {
+//     listaExtrato = JSON.parse(stringDados) //até aqui está FUNCIONANDO, traz o array de objetos //
+// }
 
 /////////////////////////////////////formato do extrato////////////////////////////////////////////////
 
@@ -22,7 +22,7 @@ function formatoExtrato() {
 
         document.querySelector('#extratoTBody').innerHTML += `
         <tr>
-            <td>${produto.transacao.value == 'venda' ? '+' : '-'} </td>
+            <td>${produto.transacao.value === 'venda' ? '+' : '-'} </td>
             <td>${produto.mercadoria}</td>
             <td>${produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 })}</td> 
         </tr>
@@ -32,6 +32,7 @@ function formatoExtrato() {
 
 
     //tfoot com lucro ou prejuízo - FUNCIONANDO//
+
     document.querySelector('table tfoot').innerHTML = ''
     document.querySelector('table tfoot').innerHTML += `
         <tr>
@@ -62,17 +63,20 @@ function adicionarItem() {
         valor: parseFloat(document.getElementById('valor').value.replaceAll('.', '').replace(',', '.'))
     });
 
-    localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
+    localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));
 
     formatoExtrato()
+
 }
 
 adicionarItem()
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //-> arrumar máscara de preço no input de valor
 //-> ajustar os sinais aritméticos do cáculo no extrato
-//-> ler mais sobre localStorage  
+//-> ler mais sobre localStorage
 //-> criar validação dos inputs
 //-> se der tempo, ajustar a tabela no padrão do figma 
