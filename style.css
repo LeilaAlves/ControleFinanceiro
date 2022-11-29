@@ -243,6 +243,19 @@ input[type=number] {
 
 }
 
+#erro {
+    display: none;
+    font-size: 0.8em;
+}
+
+#erro.visible {
+    display: block;
+}
+
+input.invalid {
+    border-color: red;
+}
+
 .botao-adicionar {
     display: flex;
     justify-content: center;
