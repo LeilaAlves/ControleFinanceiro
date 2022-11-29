@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="icon" href="./logo.svg">
     <link rel="stylesheet" href="./style.css">
     <title>Controle Financeiro</title>
 </head>
@@ -17,7 +18,7 @@
     <header>
         <div class="centralizar-header">
             <div class="logo-titulo-header">
-                <img src="./Ellipse 13.svg" alt="Logomarca Controle Financeiro" />
+                <img src="./logo.svg" alt="Logomarca Controle Financeiro" />
                 <p>Controle Financeiro</p>
             </div>
 
@@ -27,8 +28,9 @@
                 <label class="botao-menu" for="menu">
                     <span>
                         <ul class="menu-caixa">
-                            <li><button type="button" class="item-menu" href="#">Cadastro de transações</button></li>
-                            <li><button type="button" class="item-menu" href="#">Limpar Dados</button></li>
+                            <li><button type="button" class="item-menu">Cadastro de transações</button></li>
+                            <li><button type="button" id="limparDados" onclick="limparDados()" class="item-menu">Limpar
+                                    Dados</button></li>
                         </ul>
                     </span>
                 </label>
@@ -43,39 +45,44 @@
 
         <div class="controle-financeiro">
 
-            <div class="div-titulo-transacao">
-                <h5 id="transacao-titulo">Nova Transação</h5>
-            </div>
+            <form>
+                <div class="ajuste-btn-adicionar">
+                    <div class="labels-container">
+                        <div>
+                            <label for="transacao">
+                                Tipo de Transação
+                            </label>
+                            <select id="transacao" required>
+                                <option value="" selected disabled>Selecione</option>
+                                <option value="compra">Compra</option>
+                                <option value="venda">Venda</option>
+                            </select>
+                        </div>
 
-            <div class="ajuste-btn-adicionar">
-                <div class="labels-container">
-                    <div>
-                        <label for="transacao">
-                            Tipo de Transação
-                        </label>
-                        <select id="transacao">
-                            <option value="compra" selected>Compra</option>
-                            <option value="venda">Venda</option>
-                        </select>
+                        <div class="mercadoria-nome">
+                            Nome da Mercadoria
+                            <input type="text" maxlength="40" id="mercadoria" requirid placeholder="Nome da Mercadoria">
+                        </div>
+
+                        <div>
+                            Valor
+                            <input type="number" id="valor" autocomplete="off" required placeholder="Insira o valor">
+                        </div>
                     </div>
 
-                    <div class="mercadoria-nome">
-                        Nome da Mercadoria
-                        <input type="text" maxlength="40" id="mercadoria" placeholder="Nome da Mercadoria">
-                    </div>
+                    <div class="div-botao-adicionar">
 
-                    <div>
-                        Valor
-                        <input type="number" id="valor" autocomplete="off" placeholder="Insira o valor">
+                        <span role="alert" id="erro" aria-hidden="true">
+                            Preencha todos os campos para seguir.
+                        </span>
+
+                        <button type="submit" id="adicionar" onclick="adicionarItem()" class="botao-adicionar">
+                            Adicionar Transação
+                        </button>
+                       
                     </div>
                 </div>
-
-                <div class="div-botao-adicionar">
-                    <button type="button" onclick="adicionarItem()" class="botao-adicionar">
-                        Adicionar Transação
-                    </button>
-                </div>
-            </div>
+            </form>
 
         </div>
 
@@ -89,7 +96,6 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <!-- <th>&nbsp;</th> -->
                         <th>Mercadoria</th>
                         <th>Valor</th>
                     </tr>
