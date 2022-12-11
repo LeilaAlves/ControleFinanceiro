@@ -2,7 +2,8 @@ var listaExtrato = [];
 
 localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));  //setItem salva no localStorage (chave e valor)// 
 
-var stringDados = localStorage.getItem('chaveTransacao') //getItem pega o valor da chave utilizada// 
+var stringDados = localStorage.getItem('chaveTransacao'); //getItem pega o valor da chave utilizada// 
+
 
 if (localStorage.getItem('chaveTransacao')) {
     listaExtrato = JSON.parse(stringDados) //até aqui está FUNCIONANDO, traz o array de objetos //
@@ -12,27 +13,25 @@ if (localStorage.getItem('chaveTransacao')) {
 
 function formatoExtrato() {
 
-    document.querySelector('#extratoTBody').innerHTML = '';
+    document.querySelector('#extratoTBody').innerHTML = ''
+
     let total = 0;
 
     for (produto of listaExtrato) {
 
-        total += produto.valor * (produto.transacao == 'venda' ? 1 : -1)
-        //transação soma ou subtrai - FUNCIONANDO
-
+        total += produto.valor * (produto.transacao == "compra" ? -1 : 1)
         document.querySelector('#extratoTBody').innerHTML += `
         <tr>
-            <td>${produto.transacao.value === 'venda' ? "+" : "-"} </td>
+            <td>${produto.transacao != "compra" && produto.transacao == "venda" ? "+" : "-"} </td>
             <td>${produto.mercadoria}</td>
             <td>${produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 })}</td> 
         </tr>
         `
         //máscara de valor acima - FUNCIONANDO//
+    }
+        //tfoot com lucro ou prejuízo - FUNCIONANDO//     
 
-
-        //tfoot com lucro ou prejuízo - FUNCIONANDO//
-
-        document.querySelector('table tfoot').innerHTML = '';
+        document.querySelector('table tfoot').innerHTML = ''
         document.querySelector('table tfoot').innerHTML += `
         <tr>
             <td></td>
@@ -43,13 +42,11 @@ function formatoExtrato() {
         <tr>
             <td></td>
             <td></td>
-            <td id="legenda"> ${total < 0 ? '[Prejuízo]' : (total != 0 ? '[Lucro]' : '')} </td>
+            <td id="legenda"> ${total < -0 ? '[Prejuízo]' : (total > 0 ? '[Lucro]' : '')} </td>
         </tr>
         `;
-    }
-
+    
 }
-
 
 formatoExtrato()
 
@@ -64,63 +61,84 @@ function adicionarItem() {
         mercadoria: document.getElementById('mercadoria').value,
         valor: parseFloat(document.getElementById('valor').value.replaceAll('.', '').replace(',', '.'))
     });
+    
 
-        localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));
+    localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));
 
-    formatoExtrato()     
-
-    validacao()
+    
+    formatoExtrato()
     
 }
 
 adicionarItem()
 ////////////////////////////////////fim de adicionar item///////////////////////////////////////////
 
+
+
 ////////////////////////////////validadores de inputs///////////////////////////////////////////////
-const enviar = document.getElementById("adicionar");
 
-enviar.addEventListener("click", validacao);
 
-function validacao(a) {
 
-    e.preventDefault();
+function validacao() {
 
-    //validacao da opção de transacao//
-    let opcaoTransac = document.getElementById('transacao');
-    !opcaoTransac.value == "venda" && !opcaoTransac.value == "compra";
+    let valido = document.getElementById("formulario");
+    console.log()
+    valido.addEventListener("oninput", formatoExtrato);
 
-    //validacao dos inputs mercadoria e valor//
-    document.getElementById('mercadoria').value !== "" && document.getElementById('valor').value > 0
+    if (localStorage.getItem('chaveTransacao')) {
 
-    
-    let valido = true;
+        document.getElementById('mercadoria').value !== "" ||
+            console.log(document.getElementById('mercadoria').value !== "")
 
-    if (mercadoria.value && !valor.value) {
-        const erro = document.getElementById("erro");
+        document.getElementById('mercadoria').value !== undefined ||
+            console.log(document.getElementById('mercadoria').value !== undefined)
+
+        document.getElementById('valor').value !== null ||
+            console.log(document.getElementById('valor').value !== null)
+
+        document.getElementById('valor').value > 0 ||
+            console.log(document.getElementById('valor').value > 0)
+
+        document.getElementById('transacao').value !== "selecione" ||
+            console.log(ocument.getElementById('transacao').value !== "selecione")
+
+        document.getElementById('transacao').value == "venda" ||
+            console.log(document.getElementById('transacao').value == "venda")
+
+        document.getElementById('transacao').value == "compra"
+        console.log(document.getElementById('transacao').value == "compra")
+
+        console.log(valido)
+        return valido;
+
+    } else {
+
+        let erro = document.getElementById('erro');
         erro.classList.add("visible");
         mercadoria.classList.add("invalid");
         erro.setAttribute("aria-hidden", false);
         erro.setAttribute("aria-invalid", true);
+
+        return erro;
     }
 
-    return valido;
 }
+
+validacao()
+
 
 ////////////////////////////////fim de validadores de inputs///////////////////////////////////
 
 ///////////////////////excluir dados///////////////////////////// 
-// function limparDados(listaExtrato) {
-    
-    
-//     prompt("Qual transação você deseja excluir?")
+function limparDados() {
         
-//         listaExtrato.mercadoria.splice(ld, 1);
+    prompt("Qual transação você deseja excluir?")
+        
+        listaExtrato.mercadoria.splice(ld, 1);
 
-
-
-//     formatoExtrato();
-//     localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
-// } 
+    formatoExtrato();
+    localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
+} 
 
 
 

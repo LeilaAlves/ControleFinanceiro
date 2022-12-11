@@ -45,7 +45,7 @@
 
         <div class="controle-financeiro">
 
-            <form>
+            <form class="formulario">
                 <div class="ajuste-btn-adicionar">
                     <div class="labels-container">
                         <div>
@@ -53,7 +53,7 @@
                                 Tipo de Transação
                             </label>
                             <select id="transacao" required>
-                                <option value="" selected disabled>Selecione</option>
+                                <option value="selecione" selected disabled>Selecione</option>
                                 <option value="compra">Compra</option>
                                 <option value="venda">Venda</option>
                             </select>
@@ -61,26 +61,33 @@
 
                         <div class="mercadoria-nome">
                             Nome da Mercadoria
-                            <input type="text" maxlength="40" id="mercadoria" requirid placeholder="Nome da Mercadoria">
+                            <input type="text" maxlength="40" id="mercadoria" oninput="validacao()" required placeholder="Nome da Mercadoria">
                         </div>
 
                         <div>
                             Valor
-                            <input type="number" id="valor" autocomplete="off" required placeholder="Insira o valor">
+                            <input type="number" id="valor" autocomplete="off" oninput="validacao()" required placeholder="Insira o valor">
                         </div>
                     </div>
 
-                    <div class="div-botao-adicionar">
+                    <div>
+                        <div class="div-botao-adicionar">
 
-                        <span role="alert" id="erro" aria-hidden="true">
-                            Preencha todos os campos para seguir.
-                        </span>
+                            <div>
+                                <button type="button" id="adicionar" onclick="adicionarItem()" class="botao-adicionar">
+                                    Adicionar Transação
+                                </button>
+                            </div>
 
-                        <button type="submit" id="adicionar" onclick="adicionarItem()" class="botao-adicionar">
-                            Adicionar Transação
-                        </button>
-                       
+                            <div>
+                                <span role="alert" id="erro" aria-hidden="true">
+                                    *Preencha todos os campos para seguir.
+                                </span>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
             </form>
 

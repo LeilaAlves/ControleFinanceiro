@@ -249,11 +249,19 @@ input[type=number] {
 }
 
 #erro.visible {
-    display: block;
+    display: flex;
+    max-width: 100%;
+    margin-right: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    padding-top: 20px;
+    justify-content: center;
 }
 
 input.invalid {
-    border-color: red;
+    border-color: #000;
 }
 
 .botao-adicionar {
@@ -394,10 +402,13 @@ tfoot tr {
     }
 
     .div-botao-adicionar {
-        display: inline-flex;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
         height: 33px;
-        width: 200px;
-        
+        width: 100%;
+        flex-direction: row-reverse;
+        margin-bottom: 20px;
     }
 
     .botao-adicionar {
@@ -406,13 +417,13 @@ tfoot tr {
         top: 5px;
         margin-top: 20px;
         margin-bottom: 20px;
+        width: 200px;
     }
 
     .ajuste-btn-adicionar {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        padding-bottom: 20px
+        align-items: stretch;
     }
 
     .mercadoria-nome {
@@ -548,5 +559,14 @@ tfoot tr {
         display: flex;
         top: 0;
         width: 100%;
+    }
+
+    .div-botao-adicionar {
+        display: initial;
+    }
+
+    .botao-adicionar{
+    margin-bottom: 0px;
+    width: 100%;
     }
 }
