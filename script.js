@@ -7,7 +7,6 @@ var stringDados = localStorage.getItem('chaveTransacao');
 
 if (localStorage.getItem('chaveTransacao')) {
     listaExtrato = JSON.parse(stringDados)
-    addEventListener("oninput", formatoExtrato)
 }
 
 function formatoExtrato() {
@@ -16,7 +15,7 @@ function formatoExtrato() {
 
     let total = 0;
 
-    for (produto of listaExtrato) {
+    for (const produto of listaExtrato) {
 
         total += produto.valor * (produto.transacao == "compra" ? -1 : 1)
         document.querySelector('#extratoTBody').innerHTML += `
@@ -65,38 +64,37 @@ adicionarItem()
 
 function validacao() {
 
+    addEventListener("onclick", adicionar);
 
+    let erro = document.getElementById('erro');
+    erro.classList.add("visible");
+    mercadoria.classList.add("invalid");
+    erro.setAttribute("aria-hidden", false);
+    erro.setAttribute("aria-invalid", true);
 
     if (localStorage.getItem('chaveTransacao')) {
 
-        let valido = document.getElementById("formulario");
+        document.getElementById('mercadoria').value == "" ||
+        document.getElementById('mercadoria').value == undefined &&
+        document.getElementById('valor').value == null ||
+        document.getElementById('valor').value === 0 &&
+        document.getElementById('transacao').value == "selecione" ||
+        document.getElementById('transacao').value != "venda" ||
+        document.getElementById('transacao').value != "compra"
 
-        document.getElementById('mercadoria').value !== "" ||
-        document.getElementById('mercadoria').value !== undefined ||
-        document.getElementById('valor').value !== null ||
-        document.getElementById('valor').value > 0 ||
-        document.getElementById('transacao').value !== "selecione" ||
-        document.getElementById('transacao').value == "venda" ||
-        document.getElementById('transacao').value == "compra"
-
-        return valido;
+        return erro;
 
     } else {
 
-        let erro = document.getElementById('erro');
-        erro.classList.add("visible");
-        mercadoria.classList.add("invalid");
-        erro.setAttribute("aria-hidden", false);
-        erro.setAttribute("aria-invalid", true);
+        let valido = document.getElementById("formulario");
+        return valido;
 
-        return erro;
     }
-
 
 }
 
 validacao()
- 
+
 function limparDados() {
 
     prompt("Qual transação você deseja excluir?")
