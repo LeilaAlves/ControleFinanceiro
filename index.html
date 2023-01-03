@@ -52,7 +52,7 @@
                             <label for="transacao">
                                 Tipo de Transação
                             </label>
-                            <select id="transacao" required>
+                            <select id="transacao" required onblur="validacao()">
                                 <option value="selecione" selected disabled>Selecione</option>
                                 <option value="compra">Compra</option>
                                 <option value="venda">Venda</option>
@@ -61,12 +61,12 @@
 
                         <div class="mercadoria-nome">
                             Nome da Mercadoria
-                            <input type="text" maxlength="40" id="mercadoria" autocomplete="off" required placeholder="Nome da Mercadoria">
+                            <input type="text" maxlength="40" id="mercadoria" onblur="validacao()" autocomplete="off" required placeholder="Nome da Mercadoria">
                         </div>
 
                         <div>
                             Valor
-                            <input type="number" id="valor" autocomplete="off" required placeholder="Insira o valor">
+                            <input type="number" id="valor" autocomplete="off" onblur="validacao()" required placeholder="Insira o valor">
                         </div>
                     </div>
 

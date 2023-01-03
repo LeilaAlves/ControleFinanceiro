@@ -4,7 +4,6 @@ localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));
 
 var stringDados = localStorage.getItem('chaveTransacao');
 
-
 if (localStorage.getItem('chaveTransacao')) {
     listaExtrato = JSON.parse(stringDados)
 }
@@ -27,8 +26,8 @@ function formatoExtrato() {
         `
     }
 
-    document.querySelector('table tfoot').innerHTML = ''
-    document.querySelector('table tfoot').innerHTML += `
+        document.querySelector('table tfoot').innerHTML = ''
+        document.querySelector('table tfoot').innerHTML += `
         <tr>
             <td></td>
             <td>Total</td>
@@ -41,69 +40,70 @@ function formatoExtrato() {
             <td id="legenda"> ${total < -0 ? '[Prejuízo]' : (total > 0 ? '[Lucro]' : '')} </td>
         </tr>
         `;
-
+        
 }
-
-formatoExtrato()
-
-function adicionarItem() {
-
-    listaExtrato.push({
-        transacao: document.getElementById('transacao').value,
-        mercadoria: document.getElementById('mercadoria').value,
-        valor: parseFloat(document.getElementById('valor').value.replaceAll('.', '').replace(',', '.'))
-    });
-
-    localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));
 
     formatoExtrato()
 
-}
+    function adicionarItem() {
 
-adicionarItem()
+        listaExtrato.push({
+            transacao: document.getElementById('transacao').value,
+            mercadoria: document.getElementById('mercadoria').value,
+            valor: parseFloat(document.getElementById('valor').value.replaceAll('.', '').replace(',', '.'))
+        });
 
-function validacao() {
+        localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato));
 
-    addEventListener("onclick", adicionar);
+        validacao();
 
-    let erro = document.getElementById('erro');
-    erro.classList.add("visible");
-    mercadoria.classList.add("invalid");
-    erro.setAttribute("aria-hidden", false);
-    erro.setAttribute("aria-invalid", true);
-
-    if (localStorage.getItem('chaveTransacao')) {
-
-        document.getElementById('mercadoria').value == "" ||
-        document.getElementById('mercadoria').value == undefined &&
-        document.getElementById('valor').value == null ||
-        document.getElementById('valor').value === 0 &&
-        document.getElementById('transacao').value == "selecione" ||
-        document.getElementById('transacao').value != "venda" ||
-        document.getElementById('transacao').value != "compra"
-
-        return erro;
-
-    } else {
-
-        let valido = document.getElementById("formulario");
-        return valido;
+        formatoExtrato()
 
     }
 
-}
+    adicionarItem()
 
-validacao()
+    function validacao() {
 
-function limparDados() {
+        let erro = document.getElementById('erro');
+        erro.classList.add("visible");
+        mercadoria.classList.add("invalid");
+        erro.setAttribute("aria-hidden", false);
+        erro.setAttribute("aria-invalid", true);
 
-    prompt("Qual transação você deseja excluir?")
+        if (localStorage.getItem('chaveTransacao')) {
 
-    listaExtrato.mercadoria.splice(ld, 1);
+            document.getElementById('mercadoria').value == "" ||
+                document.getElementById('mercadoria').value == undefined &&
+                document.getElementById('valor').value == null ||
+                document.getElementById('valor').value === 0 &&
+                document.getElementById('transacao').value == "selecione" ||
+                document.getElementById('transacao').value != "venda" ||
+                document.getElementById('transacao').value != "compra"
 
-    formatoExtrato();
-    localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
-}
+            return erro;
+
+        } else {
+
+            let valido = document.getElementById("formulario");
+            return valido.addEventListener("onclick", adicionarItem);
+
+
+        }
+
+    }
+
+    validacao()
+
+    function limparDados() {
+
+        prompt("Qual transação você deseja excluir?")
+
+        listaExtrato.mercadoria.splice(ld, 1);
+
+        formatoExtrato();
+        localStorage.setItem('chaveTransacao', JSON.stringify(listaExtrato))
+    }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
